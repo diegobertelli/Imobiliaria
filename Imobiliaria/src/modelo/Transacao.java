@@ -41,7 +41,7 @@ public class Transacao implements Serializable{
 	
 	@Basic(optional = false)
 	@Column(name = "valor", nullable=false)
-	private BigDecimal valor;
+	private BigDecimal valorTotal;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_funcionario")
@@ -94,14 +94,14 @@ public class Transacao implements Serializable{
 	 * @return the valor
 	 */
 	public BigDecimal getValor() {
-		return valor;
+		return valorTotal;
 	}
 
 	/**
 	 * @param valor the valor to set
 	 */
 	public void setValor(BigDecimal valor) {
-		this.valor = valor;
+		this.valorTotal = valor;
 	}
 
 	/**
