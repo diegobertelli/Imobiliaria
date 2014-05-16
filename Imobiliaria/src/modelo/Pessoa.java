@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -45,10 +46,10 @@ public class Pessoa implements Serializable {
 	@Column(name = "tipopessoa", nullable=true)
 	private String tipoPessoa;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL, mappedBy= "cliente")
 	private List<Transacao> transacoes;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL, mappedBy= "propietario")
 	private List<Imovel> imovel;
 
 	public Pessoa() {

@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 public abstract class DaoGenerico<T> {
 	
 	private Class<T> entityClass;
-    protected static EntityManagerFactory emf = Persistence.createEntityManagerFactory("Projeto_Crud");
+    protected static EntityManagerFactory emf = Persistence.createEntityManagerFactory("Imobiliaria");
 
     public DaoGenerico(Class<T> entityClass) {
         this.entityClass = entityClass;

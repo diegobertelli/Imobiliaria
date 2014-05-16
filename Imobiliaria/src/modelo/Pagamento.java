@@ -35,12 +35,12 @@ public class Pagamento implements Serializable
 	@Column(name = "codcontacorrente", nullable=false)
 	private int codContaCorrente;
 	
-	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "datapagamento", nullable=false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataPagamento;
 	
-	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "datavencimento", nullable=false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataVencimento;
 	
 	@Basic(optional = false)
@@ -55,9 +55,10 @@ public class Pagamento implements Serializable
 	@Column(name = "multa", nullable=false)
 	private BigDecimal multa;
 	
+	@JoinColumn(name = "id_transacao", referencedColumnName="id", nullable=false)
 	@ManyToOne
-	@JoinColumn(name = "id_transacao")
 	private Transacao transacao;
+
 
 	/**
 	 * 

@@ -7,6 +7,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "pessoafisica")
@@ -19,6 +21,7 @@ public class PessoaFisica extends Pessoa implements Serializable {
 	
 	@Basic(optional = false)
 	@Column(name = "datanascimento", nullable=false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataNascimento;
 	
 	@Basic(optional = false)

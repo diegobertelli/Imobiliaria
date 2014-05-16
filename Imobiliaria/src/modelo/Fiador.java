@@ -2,10 +2,13 @@ package modelo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +23,9 @@ public class Fiador extends PessoaFisica implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "renda", nullable=false)
 	private BigDecimal renda;
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy= "fiador")
+	private List<Aluguel> alugueis;
 	
 	public Fiador() {
 
