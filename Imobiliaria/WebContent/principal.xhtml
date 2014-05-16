@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="template.xhtml">
+	
+	<ui:define name="corpo">
+	
+		<div class="row">
+          <div class="col-lg-12">
+            <h1> <img src="img/Layout - Atlascdr 2.png" width="150" height="50"/></h1>
+            <ol class="breadcrumb">
+
+            </ol>
+			
+			<div class="alert alert-info alert-dismissable">
+				<!-- /. Botões para interação direte // Novo Cliente // Novo Fiador // Novo Imóvel // Venda // Locação -->
+				<center>
+				<br/>
+				<p>
+				
+				<div class="row">
+				  <div class="col-lg-4 text-center" >
+				  
+						<div class="btn-group" style = "float: right;">
+						  <button type="button" class="btn btn-primary" style = "width: 150px;"><i class="fa fa-user"></i> Cliente</button>
+						  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+						  <ul class="dropdown-menu">
+							<li><a href="#">Novo</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Listar</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Buscar</a></li>                 
+						  </ul>
+						</div>
+					           
+				  </div>
+				  <div class="col-lg-4 text-center">
+					          
+						<div class="btn-group" >
+						  <button type="button" class="btn btn-primary" style = "width: 150px;"><i class="fa fa-home"></i> Imóvel</button>
+						  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+						  <ul class="dropdown-menu">
+							<li><a href="#">Novo</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Listar</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Buscar</a></li>                 
+						  </ul>
+						</div>		  
+							  
+				  </div>
+				  <div class="col-lg-4 text-center" >
+					           
+						<div class="btn-group" style = "float: left;">
+						  <button type="button" class="btn btn-primary" style = "width: 150px;"><i class="fa fa-user"></i> Fiador</button>
+						  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+						  <ul class="dropdown-menu">
+							<li><a href="#">Novo</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Listar</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Buscar</a></li>                 
+						  </ul>
+						</div>
+						
+				  </div>
+				</div>
+				
+				</p>
+				
+				<br/> <br/>
+				
+				<p>
+				
+				<div class="row">
+				  <div class="col-lg-4 text-center" >
+				  
+						<button type="button" class="btn btn-primary" style = "float: right; width: 175px;"><i class="fa fa-shopping-cart"></i> Venda</button>
+					           
+				  </div>
+				  <div class="col-lg-4 text-center">
+					          
+						<button type="button" class="btn btn-primary" style = "width: 175px;"><i class="fa fa-pencil-square-o"></i> Locação</button>
+							  
+				  </div>
+				  <div class="col-lg-4 text-center" >
+					           
+						<button type="button" class="btn btn-primary" style = "float: left; width: 175px;"><i class="fa fa-bar-chart-o"></i> Relatórios</button>
+						
+				  </div>
+				</div>
+				
+				</p>
+				
+				<br/>
+				
+				</center>
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            </div>
+			
+			<!-- /. Painel Buscar Imóveis -->
+			
+			<div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-search-plus"></i> Buscar Imóveis </h3>
+              </div>
+              <div class="panel-body">
+                <form>
+                <br/>
+				<div class="row">
+				
+				  <div class="col-lg-3 text-center">
+						<div class="form-group">
+						<label style = "float: left;">Tipo</label>
+						<select class="form-control">
+							<option></option>
+						  <option>Casa</option>
+						  <option>Apartamento</option>
+						  <option>Lote</option>
+						  <option>Sítio</option>
+						</select>
+					  </div>
+				  </div>
+				  
+				  <div class="col-lg-3 text-center">
+					    <div class="form-group">
+						<label style = "float: left;">Finalidade</label>
+						<select class="form-control">
+							<option></option>
+						  <option>Comercial</option>
+						  <option>Residencial</option>
+						</select>
+						</div>
+				  </div>
+				  
+				  <div class="col-lg-3 text-center">
+					          
+				  </div>
+				  
+				  <div class="col-lg-3 text-center">
+					        
+				  </div>
+				  
+				</div>
+				
+				<div class="row">
+				
+				  <div class="col-lg-3 text-center">
+						<div class="form-group" >
+						<label style = "float: left;">Quartos:</label>
+						<input class="form-control"/>
+						</div>
+				  </div>
+				  
+				  <div class="col-lg-3 text-center">
+					    <div class="form-group" >
+						<label style = "float: left;">Banheiros:</label>
+						<input class="form-control"/>
+						</div>  
+				  </div>
+				  
+				  <div class="col-lg-3 text-center">
+					    <div class="form-group" >
+						<label style = "float: left;">Vagas na Garagem:</label>
+						<input class="form-control"/>
+						</div>      
+				  </div>
+				  
+				  <div class="col-lg-3 text-center">
+					        
+				  </div>
+				  
+				</div>
+				
+				<div class="row">
+				
+				  <div class="col-lg-3 text-center">
+						
+				  </div>
+				  
+				  <div class="col-lg-3 text-center">
+					     
+				  </div>
+				  
+				  <div class="col-lg-3 text-center">
+					          
+				  </div>
+				  
+				  <div class="col-lg-3 text-center">
+					        
+				  </div>
+				  <br/>
+				</div>
+					
+					<button type="submit" class="btn btn-primary" style = "float: right; width: 175px;">Buscar</button>
+					<button type="reset" class="btn btn-primary" style = "float: right; margin-right: 15px; width: 175px;">Limpar</button>
+				
+				</form>
+              </div>
+            </div>
+			
+          </div>
+        </div><!-- /.row -->
+		
+		</ui:define>
+	
+	</ui:composition>
+	
+</html>

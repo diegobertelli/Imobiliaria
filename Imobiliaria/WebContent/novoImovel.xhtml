@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="template.xhtml">
+	
+
+		<ui:define name="corpo">
+	
+		<h1>
+			Sistema Imobiliário <small> Novo Imóvel </small>
+		</h1>
+		<ol class="breadcrumb">
+
+		</ol>
+		
+		<center>
+
+		<div class="panel panel-primary" >
+			<div class="panel-heading">
+				<h3 class="panel-title" >Cadastro de Imóvel</h3>
+			</div>
+			<div class="panel-body" >
+
+				<h:form>
+					
+					<div class="row">
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Numero Escritura:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.numeroEscritura}" />
+			            	           
+			          </div>
+			          
+			        </div>
+			        
+			        <label style="margin-top: 10px;float: left;">Endereço:</label>
+					<br />
+					<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.endereco}" />
+					
+				</h:form>
+
+			</div>
+		</div>
+		
+		</center>
+		
+		</ui:define>
+		
+	
+	
+	</ui:composition>
+</html>

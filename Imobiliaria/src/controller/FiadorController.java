@@ -20,7 +20,8 @@ public class FiadorController {
 	private FiadorDao fiadorDao = new FiadorDao();
 	
 	public FiadorController() {
-
+		
+		
 	}
 
 	public Fiador getFiador() {

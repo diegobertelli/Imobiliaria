@@ -28,7 +28,7 @@ public class Fiador extends PessoaFisica implements Serializable {
 	private List<Aluguel> alugueis;
 	
 	public Fiador() {
-
+		this.setTipoPessoa(TipoPessoaEnum.fisica.toString());
 	}
 
 	/**

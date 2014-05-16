@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="template.xhtml">
+	
+		<ui:define name="corpo">
+	
+		<h1>
+			Sistema Imobiliário <small> Novo Cliente </small>
+		</h1>
+		<ol class="breadcrumb">
+
+		</ol>
+		
+		<center>
+
+		<div class="panel panel-primary" >
+			<div class="panel-heading">
+				<h3 class="panel-title" >Cadastro de Fiador</h3>
+			</div>
+			<div class="panel-body" >
+
+				<h:form>
+					
+					<div class="row">
+						<div class="col-lg-6 text-center">
+						
+						<label style="margin-top: 10px; float:left;">Nome:</label>
+						<br />
+						<h:inputText class="form-control" value="#{fiadorController.fiador.nome}" />
+						
+						</div>
+						<div class="col-lg-6 text-center">
+						<label for="exampleInputEmail1" style="margin-top: 10px;float:left;">Email:</label>
+						<br />
+						<h:inputText type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="#{fiadorController.fiador.email}" />
+						</div>
+					</div>	
+					
+					<div class="row">
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Telefone:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="(99)9999-9999" value="#{fiadorController.fiador.telefone}" />
+			            	           
+			          </div>
+			          <div class="col-lg-4 text-center">
+			           	
+			           		<label style="margin-top: 10px;float: left;">CPF:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="999-999-999.99" value="#{fiadorController.fiador.cpf}" />
+			                       
+			          </div>
+			          
+			          <div class="col-lg-4 text-center">
+			           	
+			           		<label style="margin-top: 10px;float: left;">RG:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{fiadorController.fiador.rg}" />
+			                       
+			          </div>
+			          
+			        </div>
+					
+					
+						
+					<div class="row">
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px; float: left;">Sexo:</label>
+							<h:selectOneMenu class="form-control"  value="#{fiadorController.fiador.sexo}">
+								<f:selectItem itemValue="" itemLabel="" />
+								<f:selectItem itemValue="masculino" itemLabel="Masculino" />
+								<f:selectItem itemValue="feminino" itemLabel="Feminino" />
+							</h:selectOneMenu><br/>
+			            	           
+			          </div>
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Data de Nascimento:</label>
+							<br />
+							<h:inputText type="date" class="form-control" data-mask="" value="#{fiadorController.fiador.dataNascimento}" >
+							<f:convertDateTime type="date" pattern="dd/mm/yyyy" />
+			                </h:inputText>
+			          </div>
+			          
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="float: left; margin-top: 10px;">Renda:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="R$ 999999.99" value="#{fiadorController.fiador.renda}" />
+			                       
+			          </div>
+			          
+					</div>
+					
+					<hr size="10" />
+				
+					<div class="control-group" style="margin-top: 10px;float:right;">				
+			    		<div class="controls">
+			    			<h:commandButton value="Salvar" action="#{fiadorController.novoFiador()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
+			    			<h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger" style="width: 150px;"/>
+			    		</div>
+			    	</div>
+					
+				</h:form>
+
+			</div>
+		</div>
+		
+		</center>
+		
+		</ui:define>
+	
+	</ui:composition>
+</html>

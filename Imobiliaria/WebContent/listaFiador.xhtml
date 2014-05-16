@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="template.xhtml">
+	
+	<ui:define name="corpo">
+	
+			<h1>
+			Sistema Imobiliário <small> Lista Fiadores </small>
+			</h1>
+			<ol class="breadcrumb">
+	
+			</ol>
+			
+			<center>
+			
+			<div class="panel panel-primary" >
+				<div class="panel-heading">
+					<h3 class="panel-title" >Lista de Fiadores</h3>
+				</div>
+					<div class="panel-body" >
+
+			<h:form>
+				<h:dataTable value="#{fiadorController.listaFiadors}" var="fiador" styleClass="table table-hover">
+					<h:column>
+						<f:facet name="header">Nome</f:facet>
+						<h:outputText value="#{fiador.nome}" />
+	                </h:column>
+
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Email" /></f:facet>
+						<h:outputText value="#{fiador.email}" />
+	                </h:column>
+
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Telefone" /></f:facet>
+						<h:outputText value="#{fiador.telefone}" />
+	                </h:column>
+
+	                <h:column>
+						<f:facet name="header"><h:outputText value="CPF" /></f:facet>
+						<h:outputText value="#{fiador.cpf}">
+							<f:convertNumber type="currency"  />
+						</h:outputText>
+	                </h:column>
+	                
+	                <h:column>
+						<f:facet name="header"><h:outputText value="RG" /></f:facet>
+						<h:outputText value="#{fiador.rg}">
+							<f:convertNumber type="currency"  />
+						</h:outputText>
+	                </h:column>
+	                
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Sexo" /></f:facet>
+						<h:outputText value="#{fiador.sexo}">
+						</h:outputText>
+	                </h:column>
+	                
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Data Nascimento" /></f:facet>
+						<h:outputText value="#{fiador.dataNascimento}">
+
+						</h:outputText>
+	                </h:column>
+	                
+	                 <h:column>
+						<f:facet name="header"><h:outputText value="Sexo" /></f:facet>
+						<h:outputText value="#{fiador.sexo}">
+						</h:outputText>
+	                </h:column>
+	                
+				</h:dataTable>
+
+			</h:form>
+			
+			</div>
+			
+		</div>
+		
+		</center>
+			
+	</ui:define>
+	
+	</ui:composition>
+	
+</html>
