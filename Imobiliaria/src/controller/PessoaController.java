@@ -31,8 +31,8 @@ public class PessoaController {
 		this.pessoa = pessoa;
 	}
 	
-	public String novoPessoa() {
-		this.pessoaDao.create(this.pessoa);
+	public String novoPessoa(Pessoa pessoa) {
+		this.pessoaDao.create(pessoa);
 		return "newSuccess";
 	}
 

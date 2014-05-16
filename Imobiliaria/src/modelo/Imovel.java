@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -93,11 +94,11 @@ public class Imovel implements Serializable{
 	@Column(name = "valoriptu", nullable=false)
 	private BigDecimal valorIptu;
 	
+	@JoinColumn(name = "id_propietario", referencedColumnName="id", nullable=false)
 	@ManyToOne
-	@JoinColumn(name = "id_propietario")
 	private Pessoa propietario;
 
-	@OneToMany(mappedBy = "imovel")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy = "imovel")
 	private List<Transacao> transacoes;
 
 	public Imovel() {

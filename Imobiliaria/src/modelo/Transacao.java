@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,27 +36,27 @@ public class Transacao implements Serializable{
 	@Column(name = "id", nullable=false)
 	private Long id;
 	
-	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "data", nullable=false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataVenda = new java.sql.Date(System.currentTimeMillis());
 	
 	@Basic(optional = false)
 	@Column(name = "valor", nullable=false)
 	private BigDecimal valor;
 	
+	@JoinColumn(name = "id_funcionario", referencedColumnName="id", nullable=false)
 	@ManyToOne
-	@JoinColumn(name = "id_funcionario")
 	private Funcionario funcionario;
 	
+	@JoinColumn(name = "id_cliente", referencedColumnName="id", nullable=false)
 	@ManyToOne
-	@JoinColumn(name = "id_cliente")
 	private Pessoa cliente;
 	
+	@JoinColumn(name = "id_imovel", referencedColumnName="id", nullable=false)
 	@ManyToOne
-	@JoinColumn(name = "id_imovel")
 	private Imovel imovel;
 	
-	@OneToMany(mappedBy= "transacao")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy= "transacao")
 	private List<Pagamento> pagamentos;
 	
 	public Transacao() {

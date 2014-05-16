@@ -21,8 +21,8 @@ public class Aluguel extends Transacao implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "datafim", nullable=false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataFimContrato;
 	
 	@Basic(optional = false)
@@ -30,7 +30,7 @@ public class Aluguel extends Transacao implements Serializable {
 	private int diaVencimento;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_fiador")
+	@JoinColumn(name = "id_fiador", referencedColumnName = "id", nullable=false)
 	private Fiador fiador;
 
 	/**
