@@ -6,6 +6,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.event.ActionEvent;
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.model.SelectItem;
 
 import modelo.Pessoa;
@@ -18,6 +19,9 @@ public class PessoaController {
 	private Pessoa pessoa = new Pessoa();
 	
 	private PessoaDao pessoaDao = new PessoaDao();
+	
+	private boolean exibeFisica = false;
+	private boolean exibeJuridica = false;
 
 	public PessoaController() {
 
@@ -64,5 +68,35 @@ public class PessoaController {
 		}
 		return list;
 	}
+	
+	public void tipoPessoa(AjaxBehaviorEvent event){
+		
+		if(this.pessoa.getTipoPessoa().equals("A")){
+			
+			this.setExibeFisica(true);
+			
+		}else{
+			
+			this.setExibeJuridica(true);
+			
+		}
+	}
+
+	public boolean isExibeFisica() {
+		return exibeFisica;
+	}
+
+	public void setExibeFisica(boolean exibeFisica) {
+		this.exibeFisica = exibeFisica;
+	}
+
+	public boolean isExibeJuridica() {
+		return exibeJuridica;
+	}
+
+	public void setExibeJuridica(boolean exibeJuridica) {
+		this.exibeJuridica = exibeJuridica;
+	}
+	
 
 }

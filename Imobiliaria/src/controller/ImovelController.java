@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -10,6 +11,8 @@ import javax.faces.model.SelectItem;
 
 import modelo.Imovel;
 import dao.ImovelDao;
+import enums.tipoImovelEnum;
+import enums.ufEnum;
 
 @ManagedBean
 @RequestScoped
@@ -18,7 +21,11 @@ public class ImovelController {
 	private Imovel imovel = new Imovel();
 	
 	private ImovelDao imovelDao = new ImovelDao();
-
+	
+	private List<ufEnum> estados;
+	
+	private List<tipoImovelEnum> tipoImovel;
+	
 	public ImovelController() {
 
 	}
@@ -64,5 +71,20 @@ public class ImovelController {
 		}
 		return list;
 	}
+	
+	public List<ufEnum> getEstados() {
+		return Arrays.asList(ufEnum.values());
+	}
 
+	public void setEstados(List<ufEnum> estados) {
+		this.estados = estados;
+	}
+
+	public List<tipoImovelEnum> getTipoImovel() {
+		return Arrays.asList(tipoImovelEnum.values());
+	}
+
+	public void setTipoImovel(List<tipoImovelEnum> tipoImovel) {
+		this.tipoImovel = tipoImovel;
+	}
 }

@@ -27,11 +27,27 @@
 				<h:form>
 					
 					<div class="row">
-			          <div class="col-lg-4 text-center">
+						<div class="col-lg-4 text-center">
+						<label style="margin-top: 10px;float: left;margin-right: 10px;">Nome Propritário:</label>
+						<h:selectOneMenu class="form-control"  style="width: 200px;" value="#{imovelController.imovel.propietario}" required="true">
+							<f:selectItems value="#{pessoaController.pessoas}" />
+							<f:converter converterId="PessoaConverter"/>
+						</h:selectOneMenu><br/>
+			          	</div>
+			        </div>
+					
+					
+					<div class="row">
+						<div class="col-lg-4 text-center">
 			            
 			            	<label style="margin-top: 10px;float: left;">Numero Escritura:</label>
 							<br />
 							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.numeroEscritura}" />
+			            	           
+			          </div>
+			          <div class="col-lg-4 text-center">
+			            
+			            	
 			            	           
 			          </div>
 			          
@@ -40,6 +56,139 @@
 			        <label style="margin-top: 10px;float: left;">Endereço:</label>
 					<br />
 					<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.endereco}" />
+					
+					<div class="row">
+			          <div class="col-lg-2 text-center">
+			          		
+			          		<label style="margin-top: 10px;float: left;">UF:</label>
+							<br />
+			          		<h:selectOneMenu class="form-control" value="#{imovelController.imovel.uf}">
+					        	<f:selectItems value="#{imovelController.estados}" />
+					    	</h:selectOneMenu>	 
+			            	           
+			          </div>
+			           <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">CEP:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.cep}" />	           
+			          </div>
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Bairro:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.bairro}" />	           
+			          </div>
+			          
+			        </div>
+			        
+			        <div class="row">
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Cidade:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.cidade}" />
+			            	           
+			          </div>
+			           <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Tamanho:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.tamanho}" />	           
+			          </div>
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Quartos:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.quartos}" />	           
+			          </div>
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Salas:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.salas}" />	           
+			          </div>
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Banheiros:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.banheiros}" />	           
+			          </div>
+			          
+			        </div>
+			        
+			        
+			        <div class="row">
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Vagas Garagem:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.vagasGaragem}" />
+			            	           
+			          </div>
+			          <div class="col-lg-4 text-center">
+			          
+			          		<label style="margin-top: 10px;float: left;margin-right: 10px;">Situação:</label>
+			          		<h:selectOneMenu class="form-control"  value="#{imovelController.imovel.finalidade}">
+							   <f:selectItem itemValue="venda" itemLabel="Venda" />
+							   <f:selectItem itemValue="locação" itemLabel="Locação" />	   							
+							</h:selectOneMenu>          
+			            	           
+			          </div>
+			          <div class="col-lg-4 text-center">
+			          
+			          		<label style="margin-top: 10px;float: left;margin-right: 10px;">Finalidade:</label>
+			          		<h:selectOneMenu class="form-control"  value="#{imovelController.imovel.finalidade}">
+							   <f:selectItem itemValue="residencial" itemLabel="Residencial" />
+							   <f:selectItem itemValue="comercial" itemLabel="Comercial" />	   							
+							</h:selectOneMenu>     
+			            	           
+			          </div>
+
+			          
+			        </div>
+			        
+			        <div class="row">
+			          <div class="col-lg-4 text-center">
+			          
+			          		<label style="margin-top: 10px;float: left;">Tipo Imóvel:</label>
+							<br />
+			          		<h:selectOneMenu class="form-control" value="#{imovelController.imovel.tipoImovel}">
+					        	<f:selectItems value="#{imovelController.tipoImovel}" />
+					    	</h:selectOneMenu>		            
+			        
+			          </div>
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Valor imóvel:</label>
+			          		<div class="form-group input-group">
+			                <input type="text" class="form-control" value="#{imovelController.imovel.valorImovel}"/>
+			                <span class="input-group-addon">.00</span>
+			              	</div>
+			            	           
+			          </div>
+			          
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Valor do IPTU:</label>
+			          		<div class="form-group input-group">
+			                <input type="text" class="form-control" value="#{imovelController.imovel.valorImovel}"/>
+			                <span class="input-group-addon">.00</span>
+			              	</div>
+			            	           
+			          </div>
+			          
+			        </div>
+			        
+			       <hr size="10" />
+				
+					<div class="control-group" style="margin-top: 10px;float:right;">				
+			    		<div class="controls">
+			    			<h:commandButton value="Salvar" action="#{imovelController.novoImovel()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
+			    			<h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger" style="width: 150px;"/>
+			    		</div>
+			    	</div>
+			        
 					
 				</h:form>
 

@@ -1,4 +1,4 @@
-package modelo;
+package enums;
 
 public enum sexoEnum {
 

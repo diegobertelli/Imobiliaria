@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import enums.TipoPessoaEnum;
+
 @Entity
 @Table(name = "fiador")
 public class Fiador extends PessoaFisica implements Serializable {

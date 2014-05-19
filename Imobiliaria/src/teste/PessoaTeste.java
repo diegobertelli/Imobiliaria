@@ -2,12 +2,11 @@ package teste;
 
 import java.sql.Date;
 
-import sun.net.www.content.text.plain;
 import modelo.Pessoa;
 import modelo.PessoaFisica;
-import modelo.TipoPessoaEnum;
-import modelo.sexoEnum;
 import controller.PessoaController;
+import enums.TipoPessoaEnum;
+import enums.sexoEnum;
 
 public class PessoaTeste {
 

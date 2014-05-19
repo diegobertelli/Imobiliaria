@@ -25,11 +25,10 @@
 				<h:form>
 
 					<label style="margin-top: 5px;">Tipo de pessoa:</label>
-					<h:selectOneMenu class="form-control"  style="width: 200px;" value="#{pessoaController.pessoa.tipoPessoa}">
+					<h:selectOneMenu class="form-control"  style="width: 200px;" id="tipo" value="#{pessoaController.pessoa.tipoPessoa}">
 						<f:selectItem itemValue="" itemLabel="" />
-						<f:selectItem itemValue="fisica" itemLabel="Física" />
-						<f:selectItem itemValue="juridica" itemLabel="Jurídica" />
-						<f:ajax execute="@this"  listener="#{pessoaController.tipoPessoa()}" />
+						<f:selectItem itemValue="1" itemLabel="Física" />
+						<f:selectItem itemValue="2" itemLabel="Jurídica" />
 					</h:selectOneMenu><br/>
 					
 					
@@ -39,7 +38,8 @@
 			</div>
 		</div>
 		
-		<h:panelGroup  rendered="#{pessoaController.exibeFisica}">
+
+		<h:panelGroup  rendered="true">
 		
 					<div class="row">
 						<div class="col-lg-6 text-center">
@@ -112,7 +112,7 @@
 			
 		</h:panelGroup>
 		
-		<h:panelGroup rendered="#{pessoaController.exibeJuridica}">
+		<h:panelGroup rendered="#{pessoaController.pessoa.tipoPessoa == 2 ? true : false}">
 		
 				<div class="row">
 						<div class="col-lg-6 text-center">

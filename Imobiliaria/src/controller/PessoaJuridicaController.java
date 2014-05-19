@@ -65,4 +65,9 @@ public class PessoaJuridicaController {
 		return list;
 	}
 
+	public PessoaJuridica buscarPorCNPJ(String codigo) {
+
+		return null;
+	}
+
 }
