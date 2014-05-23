@@ -30,7 +30,7 @@
 						<div class="col-lg-4 text-center">
 						<label style="margin-top: 10px;float: left;margin-right: 10px;">Nome Propritário:</label>
 						<h:selectOneMenu class="form-control"  style="width: 200px;" value="#{imovelController.imovel.propietario}" required="true">
-							<f:selectItems value="#{pessoaController.pessoas}" />
+							<f:selectItems value="#{pessoaController.pessoas}"  />
 							<f:converter converterId="PessoaConverter"/>
 						</h:selectOneMenu><br/>
 			          	</div>

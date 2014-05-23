@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.AjaxBehaviorEvent;
+import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 
 import modelo.Pessoa;
@@ -69,15 +70,19 @@ public class PessoaController {
 		return list;
 	}
 	
-	public void tipoPessoa(AjaxBehaviorEvent event){
+	public void tipoPessoa(ValueChangeEvent event){
 		
-		if(this.pessoa.getTipoPessoa().equals("A")){
+		this.pessoa.setTipoPessoa(event.getNewValue().toString());
+		
+		if(this.pessoa.getTipoPessoa().equals("fisica")){
 			
 			this.setExibeFisica(true);
+			this.setExibeJuridica(false);
 			
 		}else{
 			
 			this.setExibeJuridica(true);
+			this.setExibeFisica(false);
 			
 		}
 	}
