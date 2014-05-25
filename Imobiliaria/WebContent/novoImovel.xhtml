@@ -27,13 +27,25 @@
 				<h:form>
 					
 					<div class="row">
+					
+						<!-- 
 						<div class="col-lg-4 text-center">
 						<label style="margin-top: 10px;float: left;margin-right: 10px;">Nome Propritário:</label>
 						<h:selectOneMenu class="form-control"  style="width: 200px;" value="#{imovelController.imovel.propietario}" required="true">
 							<f:selectItems value="#{pessoaController.pessoas}"  />
 							<f:converter converterId="PessoaConverter"/>
 						</h:selectOneMenu><br/>
+			          	</div>  
+			          	-->
+			          	
+			          	<div class="col-lg-4 text-center">
+						<label style="margin-top: 10px;float: left;margin-right: 10px;">Nome Propritário:</label>
+						<h:selectOneMenu id="proprietario" value="#{imovelController.prop}" onchange="submit()" class="form-control" required="true" >
+						<f:selectItem itemLabel=""/>
+				        <f:selectItems value="#{pessoaController.listaPessoas}" var="proprietario" itemLabel="#{proprietario.nome}" itemValue="#{proprietario.id}"/>
+				        </h:selectOneMenu>
 			          	</div>
+			          	
 			        </div>
 					
 					
@@ -129,7 +141,7 @@
 			          <div class="col-lg-4 text-center">
 			          
 			          		<label style="margin-top: 10px;float: left;margin-right: 10px;">Situação:</label>
-			          		<h:selectOneMenu class="form-control"  value="#{imovelController.imovel.finalidade}">
+			          		<h:selectOneMenu class="form-control"  value="#{imovelController.imovel.situacao}">
 							   <f:selectItem itemValue="venda" itemLabel="Venda" />
 							   <f:selectItem itemValue="locação" itemLabel="Locação" />	   							
 							</h:selectOneMenu>          
@@ -162,7 +174,8 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Valor imóvel:</label>
 			          		<div class="form-group input-group">
-			                <input type="text" class="form-control" value="#{imovelController.imovel.valorImovel}"/>
+			                <input type="text" class="form-control" value="#{imovelController.imovel.valorImovel}">
+			                </input>
 			                <span class="input-group-addon">.00</span>
 			              	</div>
 			            	           
@@ -172,7 +185,8 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Valor do IPTU:</label>
 			          		<div class="form-group input-group">
-			                <input type="text" class="form-control" value="#{imovelController.imovel.valorImovel}"/>
+			                <input type="text" class="form-control" value="#{imovelController.imovel.valorIptu}" >
+			                </input>
 			                <span class="input-group-addon">.00</span>
 			              	</div>
 			            	           

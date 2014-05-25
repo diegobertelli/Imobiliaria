@@ -11,6 +11,7 @@ import javax.faces.model.SelectItem;
 
 import modelo.Imovel;
 import dao.ImovelDao;
+import dao.PessoaDao;
 import enums.tipoImovelEnum;
 import enums.ufEnum;
 
@@ -21,6 +22,8 @@ public class ImovelController {
 	private Imovel imovel = new Imovel();
 	
 	private ImovelDao imovelDao = new ImovelDao();
+	
+	private String prop; 
 	
 	private List<ufEnum> estados;
 	
@@ -39,6 +42,8 @@ public class ImovelController {
 	}
 	
 	public String novoImovel() {
+		PessoaDao pessoaDao = new PessoaDao();
+		this.imovel.setPropietario(pessoaDao.find(new Long(prop)));
 		this.imovelDao.create(this.imovel);
 		return "newSuccess";
 	}
@@ -86,5 +91,13 @@ public class ImovelController {
 
 	public void setTipoImovel(List<tipoImovelEnum> tipoImovel) {
 		this.tipoImovel = tipoImovel;
+	}
+
+	public String getProp() {
+		return prop;
+	}
+
+	public void setProp(String prop) {
+		this.prop = prop;
 	}
 }
