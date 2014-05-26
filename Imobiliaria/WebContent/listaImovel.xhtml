@@ -114,6 +114,23 @@
 						</h:outputText>
 	                </h:column>
 	                
+	                <h:column>
+						<f:facet name="header" >
+							<h:outputText value="Editar"/>
+						</f:facet>
+						<h:commandLink value="editar" type="submit" action="novoImovel" actionListener="#{imovelController.buscarImovel}" >
+							<f:attribute name="codImovel" value="#{imovel.id}"/>
+						</h:commandLink>
+					</h:column>
+					<h:column>
+						<f:facet name="header" >
+							<h:outputText value="Remover"/>
+						</f:facet>
+						<h:commandLink value="remover" type="submit" actionListener="#{imovelController.removerImovel}" >
+							<f:attribute name="codImovel" value="#{imovel.id}"/>
+						</h:commandLink>
+					</h:column>
+	                
 				</h:dataTable>
 
 			</h:form>

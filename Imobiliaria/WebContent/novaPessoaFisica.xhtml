@@ -4,39 +4,38 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
-	<ui:composition template="template.xhtml">
-	
-		<ui:define name="corpo">
-	
+	<ui:composition template="template.xhtml" >
+
+	<ui:define name="corpo">
+
 		<h1>
 			Sistema Imobiliário <small> Novo Cliente </small>
 		</h1>
 		<ol class="breadcrumb">
 
 		</ol>
-		
-		<center>
 
 		<div class="panel panel-primary" >
 			<div class="panel-heading">
-				<h3 class="panel-title" >Cadastro de Fiador</h3>
+				<h3 class="panel-title">Cadastro de Pessoa</h3>
 			</div>
 			<div class="panel-body" >
 
 				<h:form>
-					
+	
+
 					<div class="row">
 						<div class="col-lg-6 text-center">
 						
 						<label style="margin-top: 10px; float:left;">Nome:</label>
 						<br />
-						<h:inputText class="form-control" value="#{fiadorController.fiador.nome}" />
+						<h:inputText class="form-control" value="#{pessoaFisicaController.pessoaFisica.nome}" />
 						
 						</div>
 						<div class="col-lg-6 text-center">
 						<label for="exampleInputEmail1" style="margin-top: 10px;float:left;">Email:</label>
 						<br />
-						<h:inputText type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="#{fiadorController.fiador.email}" />
+						<h:inputText type="email" class="form-control" id="exampleInputEmail1"  placeholder="Email" value="#{pessoaFisicaController.pessoaFisica.email}" />
 						</div>
 					</div>	
 					
@@ -45,14 +44,14 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Telefone:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="(99)9999-9999" value="#{fiadorController.fiador.telefone}" />
+							<h:inputText type="text" class="form-control" data-mask="(99)9999-9999"  value="#{pessoaFisicaController.pessoaFisica.telefone}" />
 			            	           
 			          </div>
 			          <div class="col-lg-4 text-center">
 			           	
 			           		<label style="margin-top: 10px;float: left;">CPF:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="999-999-999.99" value="#{fiadorController.fiador.cpf}" />
+							<h:inputText type="text" class="form-control" data-mask="999-999-999.99"  value="#{pessoaFisicaController.pessoaFisica.cpf}" />
 			                       
 			          </div>
 			          
@@ -60,19 +59,17 @@
 			           	
 			           		<label style="margin-top: 10px;float: left;">RG:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{fiadorController.fiador.rg}" />
+							<h:inputText type="text" class="form-control" data-mask=""  value="#{pessoaFisicaController.pessoaFisica.rg}" />
 			                       
 			          </div>
 			          
 			        </div>
-					
-					
 						
 					<div class="row">
 			          <div class="col-lg-4 text-center">
 			            
 			            	<label style="margin-top: 10px; float: left;">Sexo:</label>
-							<h:selectOneMenu class="form-control"  value="#{fiadorController.fiador.sexo}">
+							<h:selectOneMenu class="form-control"  value="#{pessoaFisicaController.pessoaFisica.sexo}">
 								<f:selectItem itemValue="" itemLabel="" />
 								<f:selectItem itemValue="masculino" itemLabel="Masculino" />
 								<f:selectItem itemValue="feminino" itemLabel="Feminino" />
@@ -83,38 +80,25 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Data de Nascimento:</label>
 							<br />
-							<h:inputText type="date" class="form-control" data-mask="" value="#{fiadorController.fiador.dataNascimento}" >
+							<h:inputText type="date" class="form-control" data-mask=""  value="#{pessoaFisicaController.pessoaFisica.dataNascimento}" >
 							<f:convertDateTime type="date" pattern="dd/mm/yyyy" />
 			                </h:inputText>
 			          </div>
-			          
-			          <div class="col-lg-4 text-center">
-			            
-			            	<label style="float: left; margin-top: 10px;">Renda:</label>
-							<br />
-							<h:inputText type="text" class="form-control" data-mask="R$ 999999.99" value="#{fiadorController.fiador.renda}" />
-			                       
-			          </div>
-			          
-					</div>
+			         </div>
 					
-					<hr size="10" />
-				
-					<div class="control-group" style="margin-top: 10px;float:right;">				
+					<div class="control-group" style="margin-top: 21px;">				
 			    		<div class="controls">
-			    			<h:commandButton value="Salvar" action="#{fiadorController.editarFiador()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
-			    			<h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger" style="width: 150px;"/>
+			    			<h:commandButton value="Salvar" styleClass="btn btn-success" style="margin-right: 10px;" action="#{pessoaFisicaController.novoPessoaFisica()}" />
+			    			<h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger" style=""/>
 			    		</div>
 			    	</div>
-					
-				</h:form>
+
+			</h:form>
 
 			</div>
 		</div>
-		
-		</center>
-		
-		</ui:define>
-	
-	</ui:composition>
+
+	</ui:define>
+
+</ui:composition>
 </html>

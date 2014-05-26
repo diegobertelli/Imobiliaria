@@ -43,12 +43,12 @@ public class FiadorController {
 	}
 
 	public void removerFiador(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codFiador");
+		Long id = (Long) e.getComponent().getAttributes().get("codFiador");
 		this.fiadorDao.remove(this.fiadorDao.find(id));
 	}
 
 	public void buscarFiador(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codFiador");
+		Long id = (Long) e.getComponent().getAttributes().get("codFiador");
 		this.fiador = this.fiadorDao.find(id);
 	}
 

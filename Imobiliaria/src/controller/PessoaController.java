@@ -6,7 +6,6 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.event.ActionEvent;
-import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 
@@ -23,6 +22,7 @@ public class PessoaController {
 	
 	private boolean exibeFisica = false;
 	private boolean exibeJuridica = false;
+	private String tipoPessoa;
 
 	public PessoaController() {
 
@@ -47,12 +47,12 @@ public class PessoaController {
 	}
 
 	public void removerPessoa(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codPessoa");
+		Long id = (Long) e.getComponent().getAttributes().get("codPessoa");
 		this.pessoaDao.remove(this.pessoaDao.find(id));
 	}
 
 	public void buscarPessoa(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codPessoa");
+		Long id = (Long) e.getComponent().getAttributes().get("codPessoa");
 		this.pessoa = this.pessoaDao.find(id);
 	}
 
@@ -72,9 +72,9 @@ public class PessoaController {
 	
 	public void tipoPessoa(ValueChangeEvent event){
 		
-		this.pessoa.setTipoPessoa(event.getNewValue().toString());
+		this.setTipoPessoa(event.getNewValue().toString());
 		
-		if(this.pessoa.getTipoPessoa().equals("fisica")){
+		if(this.getTipoPessoa().equals("fisica")){
 			
 			this.setExibeFisica(true);
 			this.setExibeJuridica(false);
@@ -101,6 +101,14 @@ public class PessoaController {
 
 	public void setExibeJuridica(boolean exibeJuridica) {
 		this.exibeJuridica = exibeJuridica;
+	}
+
+	public String getTipoPessoa() {
+		return tipoPessoa;
+	}
+
+	public void setTipoPessoa(String tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
 	}
 	
 

@@ -42,12 +42,12 @@ public class AluguelController {
 	}
 
 	public void removerAluguel(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codAluguel");
+		Long id = (Long) e.getComponent().getAttributes().get("codAluguel");
 		this.aluguelDao.remove(this.aluguelDao.find(id));
 	}
 
 	public void buscarAluguel(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codAluguel");
+		Long id = (Long) e.getComponent().getAttributes().get("codAluguel");
 		this.aluguel = this.aluguelDao.find(id);
 	}
 

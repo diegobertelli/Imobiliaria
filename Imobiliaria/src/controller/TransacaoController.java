@@ -42,12 +42,12 @@ public class TransacaoController {
 	}
 
 	public void removerTransacao(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codTransacao");
+		Long id = (Long) e.getComponent().getAttributes().get("codTransacao");
 		this.transacaoDao.remove(this.transacaoDao.find(id));
 	}
 
 	public void buscarTransacao(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codTransacao");
+		Long id = (Long) e.getComponent().getAttributes().get("codTransacao");
 		this.transacao = this.transacaoDao.find(id);
 	}
 

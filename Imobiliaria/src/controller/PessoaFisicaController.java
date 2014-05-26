@@ -32,8 +32,12 @@ public class PessoaFisicaController {
 	}
 	
 	public String novoPessoaFisica() {
+		
+		this.pessoaFisica.setTipoPessoa("fisica");
+			
 		this.pessoaFisicaDao.create(this.pessoaFisica);
-		return "newSuccess";
+		
+		return "novaPessoaFisica";
 	}
 
 	public String editarPessoaFisica() {
@@ -42,12 +46,12 @@ public class PessoaFisicaController {
 	}
 
 	public void removerPessoaFisica(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codPessoaFisica");
+		Long id = (Long) e.getComponent().getAttributes().get("codPessoaFisica");
 		this.pessoaFisicaDao.remove(this.pessoaFisicaDao.find(id));
 	}
 
 	public void buscarPessoaFisica(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codPessoaFisica");
+		Long id = (Long) e.getComponent().getAttributes().get("codPessoaFisica");
 		this.pessoaFisica = this.pessoaFisicaDao.find(id);
 	}
 

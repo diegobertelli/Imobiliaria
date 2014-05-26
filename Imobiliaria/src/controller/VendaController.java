@@ -42,12 +42,12 @@ public class VendaController {
 	}
 
 	public void removerVenda(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codVenda");
+		Long id = (Long) e.getComponent().getAttributes().get("codVenda");
 		this.vendaDao.remove(this.vendaDao.find(id));
 	}
 
 	public void buscarVenda(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codVenda");
+		Long id = (Long) e.getComponent().getAttributes().get("codVenda");
 		this.venda = this.vendaDao.find(id);
 	}
 

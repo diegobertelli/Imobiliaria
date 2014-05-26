@@ -73,6 +73,30 @@
 						</h:outputText>
 	                </h:column>
 	                
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Renda" /></f:facet>
+						<h:outputText value="#{fiador.renda}">
+						<f:convertNumber type="currency"  />
+						</h:outputText>
+	                </h:column>
+	                
+	                <h:column>
+						<f:facet name="header" >
+							<h:outputText value="Editar"/>
+						</f:facet>
+						<h:commandLink value="editar" type="submit" action="novoFiador" actionListener="#{fiadorController.buscarFiador}" >
+							<f:attribute name="codFiador" value="#{fiador.id}"/>
+						</h:commandLink>
+					</h:column>
+					<h:column>
+						<f:facet name="header" >
+							<h:outputText value="Remover"/>
+						</f:facet>
+						<h:commandLink value="remover" type="submit" actionListener="#{fiadorController.removerFiador}" >
+							<f:attribute name="codFiador" value="#{fiador.id}"/>
+						</h:commandLink>
+					</h:column>
+	                
 				</h:dataTable>
 
 			</h:form>

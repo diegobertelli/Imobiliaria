@@ -32,8 +32,11 @@ public class PessoaJuridicaController {
 	}
 	
 	public String novoPessoaJuridica() {
+		
+		this.pessoaJuridica.setTipoPessoa("juridica");
+		
 		this.pessoaJuridicaDao.create(this.pessoaJuridica);
-		return "newSuccess";
+		return "novaPessoaJuridica";
 	}
 
 	public String editarPessoaJuridica() {
@@ -42,12 +45,12 @@ public class PessoaJuridicaController {
 	}
 
 	public void removerPessoaJuridica(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codPessoaJuridica");
+		Long id = (Long) e.getComponent().getAttributes().get("codPessoaJuridica");
 		this.pessoaJuridicaDao.remove(this.pessoaJuridicaDao.find(id));
 	}
 
 	public void buscarPessoaJuridica(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codPessoaJuridica");
+		Long id = (Long) e.getComponent().getAttributes().get("codPessoaJuridica");
 		this.pessoaJuridica = this.pessoaJuridicaDao.find(id);
 	}
 

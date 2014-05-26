@@ -42,12 +42,12 @@ public class PagamentoController {
 	}
 
 	public void removerPagamento(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codPagamento");
+		Long id = (Long) e.getComponent().getAttributes().get("codPagamento");
 		this.pagamentoDao.remove(this.pagamentoDao.find(id));
 	}
 
 	public void buscarPagamento(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codPagamento");
+		Long id = (Long) e.getComponent().getAttributes().get("codPagamento");
 		this.pagamento = this.pagamentoDao.find(id);
 	}
 

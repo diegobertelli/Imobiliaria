@@ -54,12 +54,12 @@ public class ImovelController {
 	}
 
 	public void removerImovel(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codImovel");
+		Long id = (Long) e.getComponent().getAttributes().get("codImovel");
 		this.imovelDao.remove(this.imovelDao.find(id));
 	}
 
 	public void buscarImovel(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codImovel");
+		Long id = (Long) e.getComponent().getAttributes().get("codImovel");
 		this.imovel = this.imovelDao.find(id);
 	}
 

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="template.xhtml" >
+
+	<ui:define name="corpo">
+
+		<h1>
+			Sistema Imobiliário <small> Novo Cliente </small>
+		</h1>
+		<ol class="breadcrumb">
+
+		</ol>
+
+		<div class="panel panel-primary" >
+			<div class="panel-heading">
+				<h3 class="panel-title">Cadastro de Pessoa</h3>
+			</div>
+			<div class="panel-body" >
+
+				<h:form>
+	
+
+			<div class="row">
+						<div class="col-lg-6 text-center">
+						
+						<label style="margin-top: 10px; float:left;">Nome:</label>
+						<br />
+						<h:inputText class="form-control" value="#{pessoaJuridicaController.pessoaJuridica.nome}" />
+						
+						</div>
+						<div class="col-lg-6 text-center">
+						<label for="exampleInputEmail1" style="margin-top: 10px;float:left;">Email:</label>
+						<br />
+						<h:inputText type="email" class="form-control" id="exampleInputEmail" placeholder="Email" value="#{pessoaJuridicaController.pessoaJuridica.email}" />
+						</div>
+			</div>	
+					
+					<div class="row">
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Telefone:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="(99)9999-9999" value="#{pessoaJuridicaController.pessoaJuridica.telefone}" />
+			            	           
+			          </div>
+			          <div class="col-lg-4 text-center">
+			           	
+			           		<label style="margin-top: 10px;float: left;">Razao Social:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{pessoaJuridicaController.pessoaJuridica.razaoSocial}" />
+			                       
+			          </div>
+			          
+			          <div class="col-lg-4 text-center">
+			           	
+							
+							<label style="margin-top: 10px;float: left;">CNPJ:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="99.999.999/9999-99" value="#{pessoaJuridicaController.pessoaJuridica.cnpj}" />
+			                       
+			          </div>
+			          
+			        </div>
+						
+					<div class="row">
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Inscrição Estadual:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{pessoaJuridicaController.pessoaJuridica.ie}" />
+			            	           
+			          </div>
+			         </div>
+					
+					<div class="control-group" style="margin-top: 21px;">				
+			    		<div class="controls">
+			    			<h:commandButton value="Salvar" styleClass="btn btn-success" style="margin-right: 10px;" action="#{pessoaJuridicaController.novoPessoaJuridica()}"/>
+			    			<h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger" style=""/>
+			    		</div>
+			    	</div>
+	
+			</h:form>
+
+			</div>
+		</div>
+
+	</ui:define>
+
+</ui:composition>
+</html>

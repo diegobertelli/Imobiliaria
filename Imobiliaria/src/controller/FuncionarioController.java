@@ -42,12 +42,12 @@ public class FuncionarioController {
 	}
 
 	public void removerFuncionario(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codFuncionario");
+		Long id = (Long) e.getComponent().getAttributes().get("codFuncionario");
 		this.funcionarioDao.remove(this.funcionarioDao.find(id));
 	}
 
 	public void buscarFuncionario(ActionEvent e) {
-		String id = (String) e.getComponent().getAttributes().get("codFuncionario");
+		Long id = (Long) e.getComponent().getAttributes().get("codFuncionario");
 		this.funcionario = this.funcionarioDao.find(id);
 	}
 
