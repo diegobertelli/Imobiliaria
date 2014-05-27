@@ -18,6 +18,9 @@ public class FuncionarioController {
 	private Funcionario funcionario = new Funcionario();
 	
 	private FuncionarioDao funcionarioDao = new FuncionarioDao();
+	
+	private String usuario;
+	private String senha;
 
 	public FuncionarioController() {
 
@@ -32,8 +35,9 @@ public class FuncionarioController {
 	}
 	
 	public String novoFuncionario() {
+		this.funcionario.setTipoPessoa("funcionario");
 		this.funcionarioDao.create(this.funcionario);
-		return "newSuccess";
+		return "login";
 	}
 
 	public String editarFuncionario() {
@@ -42,12 +46,12 @@ public class FuncionarioController {
 	}
 
 	public void removerFuncionario(ActionEvent e) {
-		Long id = (Long) e.getComponent().getAttributes().get("codFuncionario");
+		String id = (String) e.getComponent().getAttributes().get("codFuncionario");
 		this.funcionarioDao.remove(this.funcionarioDao.find(id));
 	}
 
 	public void buscarFuncionario(ActionEvent e) {
-		Long id = (Long) e.getComponent().getAttributes().get("codFuncionario");
+		String id = (String) e.getComponent().getAttributes().get("codFuncionario");
 		this.funcionario = this.funcionarioDao.find(id);
 	}
 
@@ -63,6 +67,56 @@ public class FuncionarioController {
 			list.add(new SelectItem(funcionario, funcionario.getId() + ""));
 		}
 		return list;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
+	public String validarUsuario(){
+		
+		FuncionarioDao funcionarioDao = new FuncionarioDao();
+		Funcionario func = null;
+		
+		try {
+			func = funcionarioDao.buscarPorLogin(this.usuario);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		if(!func.equals(null)){
+		
+			if(this.usuario.equals(func.getLogin()) && this.senha.equals(func.getSenha()) ){
+				
+				return"principal";
+				
+			}else{
+				return "login";
+			}
+		}else{
+			
+			return "login";
+			
+		}
+		
+	}
+	
+	public String cadastrarUsuario(){
+		
+		return "novoFuncionario";
+		
 	}
 	
 }

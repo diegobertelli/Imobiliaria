@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PROCESS model-entity="JSFProcess"/>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#novoCliente.xhtml" PATH="/novoCliente.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#novoCliente.xhtml:0" NAME="item"
+   PATH="/novoCliente.xhtml" model-entity="JSFProcessItem"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#login.html" PATH="/login.html"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#login.html:0" NAME="item" PATH="/login.html" model-entity="JSFProcessItem"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#principal.xhtml" PATH="/principal.xhtml"
+  SHAPE="448,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#principal.xhtml:0" NAME="item"
+   PATH="/principal.xhtml" model-entity="JSFProcessItem"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#novoFuncionario.xhtml"
+  PATH="/novoFuncionario.xhtml" SHAPE="656,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#novoFuncionario.xhtml:0" NAME="item"
+   PATH="/novoFuncionario.xhtml" model-entity="JSFProcessItem"/>
+ </PROCESS-ITEM>
+</PROCESS>

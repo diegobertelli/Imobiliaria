@@ -6,4 +6,20 @@
   <converter-id>PessoaConverter</converter-id>
   <converter-class>conversor.PessoaConverter</converter-class>
  </converter>
+ <navigation-rule>
+  <display-name>novoCliente</display-name>
+  <from-view-id>/novoCliente.xhtml</from-view-id>
+ </navigation-rule>
+  <navigation-rule>
+  <display-name>login</display-name>
+  <from-view-id>/login.html</from-view-id>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>principal</display-name>
+  <from-view-id>/principal.xhtml</from-view-id>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>novoFuncionario</display-name>
+  <from-view-id>/novoFuncionario.xhtml</from-view-id>
+ </navigation-rule>
 </faces-config>

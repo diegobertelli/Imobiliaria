@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <meta name="description" content=""></meta>
+    <meta name="author" content=""></meta>
+
+    <title>Atlas - Gerenca Imobiliária</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet"></link>
+
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"></link>
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css"> </link>
+ </head>
+
+  <body style = "background-color: silver;">
+  
+  	<div style="position: absolute; margin-left: 27%; margin-right: auto; margin-top: 21px; margin-bottom: 60px;">
+  	
+  	<h:form>
+  
+  		<div class="modal-content" style="width: 600px; height: 680px;">
+  			<div class="modal-header" >
+  				<div class="bootstrap-dialog-header" >
+  					<div class="bootstrap-dialog-title">
+  						<center>Cadastro de Funcionário</center>
+  					</div>
+  					<div class="bootstrap-dialog-close-button" style="display: none;">
+  						<button class="close">×</button>
+  					</div>
+  				</div>
+  			</div>
+  				<div class="modal-body" >
+  					<div class="bootstrap-dialog-body">
+  						<div class="bootstrap-dialog-message">
+  							<br/>
+  							 <div class="row">
+								<div class="col-lg-12 text-center">
+								
+								<label style="margin-top: 10px; float:left;">Nome:</label>
+								<br />
+								<h:inputText class="form-control" value="#{funcionarioController.funcionario.nome}" />
+								
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12 text-center">
+								<label for="exampleInputEmail1" style="margin-top: 10px;float:left;">Email:</label>
+								<br />
+								<h:inputText type="email" class="form-control" id="exampleInputEmail" placeholder="Email" value="#{funcionarioController.funcionario.email}" />
+								</div>
+							</div>
+							<div class="row">
+					          <div class="col-lg-6 text-center">
+					            
+					            	<label style="margin-top: 10px;float: left;">Telefone:</label>
+									<br />
+									<h:inputText type="text" class="form-control" data-mask="(99)9999-9999" value="#{funcionarioController.funcionario.telefone}" />
+					            	           
+					          </div>
+					          <div class="col-lg-6 text-center">
+					           	
+					           		<label style="margin-top: 10px;float: left;">CPF:</label>
+									<br />
+									<h:inputText type="text" class="form-control" data-mask="999-999-999.99" value="#{funcionarioController.funcionario.cpf}" />
+					                       
+					          </div>
+							</div>
+							
+							<div class="row">
+					          <div class="col-lg-6 text-center">
+					            
+					            	<label style="margin-top: 10px;float: left;">RG:</label>
+									<br />
+									<h:inputText type="text" class="form-control" data-mask="" value="#{funcionarioController.funcionario.rg}" />
+					            	           
+					          </div>
+					          <div class="col-lg-6 text-center">
+					           	
+					           		<label style="margin-top: 10px; float: left;">Sexo:</label>
+									<h:selectOneMenu class="form-control" onchange=""  value="#{funcionarioController.funcionario.sexo}">
+										<f:selectItem itemValue="" itemLabel="" />
+										<f:selectItem itemValue="masculino" itemLabel="Masculino" />
+										<f:selectItem itemValue="feminino" itemLabel="Feminino" />
+									</h:selectOneMenu><br/>
+					                       
+					          </div>
+							</div>
+							
+							<div class="row">
+					          <div class="col-lg-6 text-center">
+					            
+					            	<label style="margin-top: 10px;float: left;">Data de Nascimento:</label>
+									<br />
+									<h:inputText type="date" class="form-control" data-mask="" value="#{funcionarioController.funcionario.dataNascimento}" >
+									<f:convertDateTime type="date" pattern="dd/mm/yyyy" />
+					                </h:inputText>
+					            	           
+					          </div>
+					          <div class="col-lg-6 text-center">
+					           	
+					                       
+					          </div>
+							</div>
+							
+							<div class="row">
+					          <div class="col-lg-6 text-center">
+					            
+					            	<label style="margin-top: 10px;float: left; ">Login:</label>
+									<br />
+									<h:inputText type="" style="background-color: #d9edf7;" class="form-control"  value="#{funcionarioController.funcionario.login}" />
+					            	           
+					          </div>
+					          <div class="col-lg-6 text-center">
+					           	
+					           		<label style="margin-top: 10px;float: left;">Senha:</label>
+									<br />
+									<h:inputText type="" style="background-color: #d9edf7;" class="form-control"  value="#{funcionarioController.funcionario.senha}" />
+					                       
+					          </div>
+							</div>
+								
+							<br/>
+  						</div>
+  					</div>
+  				</div>
+  					<div class="modal-footer">
+  						<center>
+  						<div class="bootstrap-dialog-footer">
+  							<div class="control-group" style="margin-top: 21px;">				
+					    		<div class="controls">
+					    			<h:commandButton value="Salvar" styleClass="btn btn-success" style="margin-right: 10px; width: 175px;" action="#{funcionarioController.novoFuncionario()}"/>
+					    			<h:commandButton value="Limpar" action="login" style="width: 175px;" type="reset" styleClass="btn btn-danger" />
+					    		</div>
+					    	</div>
+  						</div>
+  						</center>
+  					</div>
+  				</div>
+		
+		</h:form>
+  
+  	</div>
+  
+  
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Page Specific Plugins -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <script src="js/morris/chart-data-morris.js"></script>
+    <script src="js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="js/tablesorter/tables.js"></script>
+
+  </body>
+	
+
+</html>

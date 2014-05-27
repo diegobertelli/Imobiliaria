@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:ui="http://java.sun.com/jsf/facelets" 
       xmlns:h="http://java.sun.com/jsf/html" 
@@ -25,6 +25,8 @@
   <body style = "background-color: silver;">
   
   	<div style="position: absolute; margin-left: 27%; margin-right: auto; margin-top: 75px;">
+
+	<h:form>
   
   		<div class="modal-content" style="width: 600px; height: 400px;">
   			<div class="modal-header" >
@@ -42,28 +44,36 @@
   						<div class="bootstrap-dialog-message">
   							<br/>
   							 <div class="form-group" >
-							<label style = "float: left;">Usuário:</label>
-							<input class="form-control"/>
+							<label style="margin-top: 10px;float: left; ">Login:</label>
+							<br />
+							<h:inputText type="" style="background-color: #d9edf7;" class="form-control"  value="#{funcionarioController.usuario}" />
 							</div> 
 							 <div class="form-group" >
-							<label style = "float: left;">Senha:</label>
-							<input class="form-control"/>
+							<label style="margin-top: 10px;float: left;">Senha:</label>
+							<br />
+							<h:inputSecret type="password" style="background-color: #d9edf7;" class="form-control"  value="#{funcionarioController.senha}" />
 							</div> 
 							<br/>
   						</div>
   					</div>
   				</div>
   					<div class="modal-footer">
+  						<center>
   						<div class="bootstrap-dialog-footer">
-  							<div class="bootstrap-dialog-footer-buttons" style= " padding-top: 12px; padding-left: 30px; padding-right: 30px; " >
-  								<button type="submit" class="btn btn-primary" style = "float: right; width: 175px;">Entrar</button>
-								<button type="reset" class="btn btn-success" style = "float: left; margin-right: 15px; width: 175px;">Cadastrar</button>
-  							</div>
+  							<div class="control-group" style="margin-top: 9px;">				
+					    		<div class="controls">
+					    			<h:commandButton value="Entrar" styleClass="btn btn-success" style="margin-right: 10px; width: 175px;" action="#{funcionarioController.validarUsuario()}"/>
+					    			<h:commandButton value="Cadastrar" styleClass="btn btn-primary" style="margin-right: 10px; width: 175px;" action="#{funcionarioController.cadastrarUsuario()}"/>
+					    		</div>
+					    	</div>
   						</div>
-  					</div>
-  				</div>
-		
-  
+  						</center>
+  					</div>			
+  				
+  			</div>
+  			
+		 </h:form>
+
   	</div>
   
   
