@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="template.xhtml">
+	
+	<ui:define name="corpo">
+	
+		<h1>
+			Sistema Imobiliário <small> Lista Imóveis </small>
+			</h1>
+			<ol class="breadcrumb">
+	
+			</ol>
+			
+			<center>
+			
+			<div class="panel panel-primary" >
+				<div class="panel-heading">
+					<h3 class="panel-title" >Lista de Imóveis</h3>
+				</div>
+					<div class="panel-body" >
+
+			<h:form>
+				<h:dataTable value="#{imovelController.imoveis}" var="imovel" styleClass="table table-hover">
+					<h:column>
+						<f:facet name="header">Numero Escritura</f:facet>
+						<h:outputText value="#{imovel.numeroEscritura}" />
+	                </h:column>
+
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Endereço" /></f:facet>
+						<h:outputText value="#{imovel.endereco}" />
+	                </h:column>
+
+	                <h:column>
+						<f:facet name="header"><h:outputText value="UF" /></f:facet>
+						<h:outputText value="#{imovel.uf}" />
+	                </h:column>
+
+	                <h:column>
+						<f:facet name="header"><h:outputText value="CEP" /></f:facet>
+						<h:outputText value="#{imovel.cep}">
+							<f:convertNumber type="currency"  />
+						</h:outputText>
+	                </h:column>
+	                
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Bairro" /></f:facet>
+						<h:outputText value="#{imovel.bairro}">
+							<f:convertNumber type="currency"  />
+						</h:outputText>
+	                </h:column>
+	                
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Cidade" /></f:facet>
+						<h:outputText value="#{imovel.cidade}">
+						</h:outputText>
+	                </h:column>
+	                
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Tamanho" /></f:facet>
+						<h:outputText value="#{imovel.tamanho}">
+
+						</h:outputText>
+	                </h:column>
+	                
+	                 <h:column>
+						<f:facet name="header"><h:outputText value="Quartos" /></f:facet>
+						<h:outputText value="#{imovel.quartos}">
+						</h:outputText>
+	                </h:column>
+	                
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Salas" /></f:facet>
+						<h:outputText value="#{imovel.salas}">
+						</h:outputText>
+	                </h:column>
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Banheiros" /></f:facet>
+						<h:outputText value="#{imovel.banheiros}">
+						</h:outputText>
+	                </h:column>
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Vagas na Garagem" /></f:facet>
+						<h:outputText value="#{imovel.vagasGaragem}">
+						</h:outputText>
+	                </h:column>
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Situação" /></f:facet>
+						<h:outputText value="#{imovel.situacao}">
+						</h:outputText>
+	                </h:column>
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Finalidade" /></f:facet>
+						<h:outputText value="#{imovel.finalidade}">
+						</h:outputText>
+	                </h:column>
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Tipo de Imovel" /></f:facet>
+						<h:outputText value="#{imovel.tipoImovel}">
+						</h:outputText>
+	                </h:column>
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Valor do Imovel" /></f:facet>
+						<h:outputText value="#{imovel.valorImovel}">
+						</h:outputText>
+	                </h:column>
+	                <h:column>
+						<f:facet name="header"><h:outputText value="Valor IPTU" /></f:facet>
+						<h:outputText value="#{imovel.valorIptu}">
+						</h:outputText>
+	                </h:column>
+	                 <h:column>
+						<f:facet name="header"><h:outputText value="Nome Proprietário" /></f:facet>
+						<h:outputText value="#{imovel.propietario.nome}">
+						</h:outputText>
+	                </h:column>
+	                
+				</h:dataTable>
+
+			</h:form>
+			
+			</div>
+			
+		</div>
+		
+		</center>
+		
+		</ui:define>
+	
+	</ui:composition>
+</html>

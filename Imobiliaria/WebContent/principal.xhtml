@@ -108,97 +108,80 @@
                 <h3 class="panel-title"><i class="fa fa-search-plus"></i> Buscar Imóveis </h3>
               </div>
               <div class="panel-body">
-                <form>
-                <br/>
-				<div class="row">
-				
-				  <div class="col-lg-3 text-center">
-						<div class="form-group">
-						<label style = "float: left;">Tipo</label>
-						<select class="form-control">
-							<option></option>
-						  <option>Casa</option>
-						  <option>Apartamento</option>
-						  <option>Lote</option>
-						  <option>Sítio</option>
-						</select>
-					  </div>
-				  </div>
-				  
-				  <div class="col-lg-3 text-center">
-					    <div class="form-group">
-						<label style = "float: left;">Finalidade</label>
-						<select class="form-control">
-							<option></option>
-						  <option>Comercial</option>
-						  <option>Residencial</option>
-						</select>
-						</div>
-				  </div>
-				  
-				  <div class="col-lg-3 text-center">
-					          
-				  </div>
-				  
-				  <div class="col-lg-3 text-center">
-					        
-				  </div>
-				  
-				</div>
-				
-				<div class="row">
-				
-				  <div class="col-lg-3 text-center">
-						<div class="form-group" >
-						<label style = "float: left;">Quartos:</label>
-						<input class="form-control"/>
-						</div>
-				  </div>
-				  
-				  <div class="col-lg-3 text-center">
-					    <div class="form-group" >
-						<label style = "float: left;">Banheiros:</label>
-						<input class="form-control"/>
-						</div>  
-				  </div>
-				  
-				  <div class="col-lg-3 text-center">
-					    <div class="form-group" >
-						<label style = "float: left;">Vagas na Garagem:</label>
-						<input class="form-control"/>
-						</div>      
-				  </div>
-				  
-				  <div class="col-lg-3 text-center">
-					        
-				  </div>
-				  
-				</div>
-				
-				<div class="row">
-				
-				  <div class="col-lg-3 text-center">
-						
-				  </div>
-				  
-				  <div class="col-lg-3 text-center">
-					     
-				  </div>
-				  
-				  <div class="col-lg-3 text-center">
-					          
-				  </div>
-				  
-				  <div class="col-lg-3 text-center">
-					        
-				  </div>
-				  <br/>
-				</div>
+                <h:form>
 					
-					<button type="submit" class="btn btn-primary" style = "float: right; width: 175px;">Buscar</button>
-					<button type="reset" class="btn btn-primary" style = "float: right; margin-right: 15px; width: 175px;">Limpar</button>
+					<div class="row">
+					
+			          <div class="col-lg-4 text-center">
+			          		<label style="margin-top: 10px;float: left;margin-right: 10px;">Negócio:</label>
+			          		<h:selectOneMenu class="form-control"  value="#{imovelController.imovel.finalidade}">
+			          		   <f:selectItem itemValue="" itemLabel="" />
+							   <f:selectItem itemValue="venda" itemLabel="Venda" />
+							   <f:selectItem itemValue="locacao" itemLabel="Locação" />	   							
+							</h:selectOneMenu>          		            	           
+			          </div>
+			          
+			          <div class="col-lg-4 text-center"> 
+			          		<label style="margin-top: 10px;float: left;margin-right: 10px;">Finalidade:</label>
+			          		<h:selectOneMenu class="form-control"  value="#{imovelController.imovel.finalidade}">
+			          		   <f:selectItem itemValue="" itemLabel="" />
+							   <f:selectItem itemValue="residencial" itemLabel="Residencial" />
+							   <f:selectItem itemValue="comercial" itemLabel="Comercial" />	   							
+							</h:selectOneMenu>     		            	           
+			          </div>
+			          
+			          <div class="col-lg-4 text-center">
+			          		<label style="margin-top: 10px;float: left;">Tipo Imóvel:</label>
+							<br />
+			          		<h:selectOneMenu class="form-control" value="#{imovelController.imovel.tipoImovel}">
+			          		    <f:selectItem itemValue="" itemLabel="" />
+					        	<f:selectItems value="#{imovelController.tipoImovel}" />
+					    	</h:selectOneMenu>		                   
+			          </div>
+			          
+			        </div>
+					
+					
+						
+					<div class="row">
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Quartos:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.quartos}" />	           
+			          </div>
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Salas:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.salas}" />	           
+			          </div>
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Banheiros:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.banheiros}" />	           
+			          </div>
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Vagas Garagem:</label>
+							<br />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.vagasGaragem}" />
+			            	           
+			          </div>
+			          
+					</div>
+					
+					<hr size="10" />
 				
-				</form>
+					<div class="control-group" style="margin-top: 10px;float:right;">				
+			    		<div class="controls">
+			    			<h:commandButton value="Buscar" action="exibicaoPersonalizada" actionListener="#{imovelController.consultarImoveis}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
+			    			<h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger" style="width: 150px;"/>
+			    		</div>
+			    	</div>
+					
+				</h:form>
               </div>
             </div>
 			

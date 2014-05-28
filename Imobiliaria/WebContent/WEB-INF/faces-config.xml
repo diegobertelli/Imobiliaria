@@ -12,7 +12,7 @@
  </navigation-rule>
   <navigation-rule>
   <display-name>login</display-name>
-  <from-view-id>/login.html</from-view-id>
+  <from-view-id>/login.xhtml</from-view-id>
  </navigation-rule>
  <navigation-rule>
   <display-name>principal</display-name>
@@ -21,5 +21,21 @@
  <navigation-rule>
   <display-name>novoFuncionario</display-name>
   <from-view-id>/novoFuncionario.xhtml</from-view-id>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>novaPessoaFisica</display-name>
+  <from-view-id>/novaPessoaFisica.xhtml</from-view-id>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>novaPessoaJuridica</display-name>
+  <from-view-id>/novaPessoaJuridica.xhtml</from-view-id>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>listaPessoaFisica</display-name>
+  <from-view-id>/listaPessoaFisica.xhtml</from-view-id>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>listaPessoaJuridica</display-name>
+  <from-view-id>/listaPessoaJuridica.xhtml</from-view-id>
  </navigation-rule>
 </faces-config>

@@ -23,6 +23,8 @@ public class ImovelController {
 	
 	private ImovelDao imovelDao = new ImovelDao();
 	
+	private List<Imovel> imoveis;
+	
 	private String prop; 
 	
 	private List<ufEnum> estados;
@@ -99,5 +101,19 @@ public class ImovelController {
 
 	public void setProp(String prop) {
 		this.prop = prop;
+	}
+
+	public List<Imovel> getImoveis() {
+		return imoveis;
+	}
+
+	public void setImoveis(List<Imovel> imoveis) {
+		this.imoveis = imoveis;
+	}
+	
+	public void consultarImoveis(ActionEvent e){
+		
+		this.imoveis = imovelDao.consultarImoveis(this.imovel);
+
 	}
 }

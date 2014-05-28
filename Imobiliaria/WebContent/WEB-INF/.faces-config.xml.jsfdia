@@ -5,10 +5,6 @@
   <PROCESS-ITEM ID="rules:#novoCliente.xhtml:0" NAME="item"
    PATH="/novoCliente.xhtml" model-entity="JSFProcessItem"/>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#login.html" PATH="/login.html"
-  SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#login.html:0" NAME="item" PATH="/login.html" model-entity="JSFProcessItem"/>
- </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#principal.xhtml" PATH="/principal.xhtml"
   SHAPE="448,17,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#principal.xhtml:0" NAME="item"
@@ -18,5 +14,30 @@
   PATH="/novoFuncionario.xhtml" SHAPE="656,33,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#novoFuncionario.xhtml:0" NAME="item"
    PATH="/novoFuncionario.xhtml" model-entity="JSFProcessItem"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#login.xhtml" PATH="/login.xhtml"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#login.xhtml:0" NAME="item"
+   PATH="/login.xhtml" model-entity="JSFProcessItem"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#listaPessoaFisica.xhtml"
+  PATH="/listaPessoaFisica.xhtml" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#listaPessoaFisica.xhtml:0" NAME="item"
+   PATH="/listaPessoaFisica.xhtml" model-entity="JSFProcessItem"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#listaPessoaJuridica.xhtml"
+  PATH="/listaPessoaJuridica.xhtml" SHAPE="240,145,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#listaPessoaJuridica.xhtml:0" NAME="item"
+   PATH="/listaPessoaJuridica.xhtml" model-entity="JSFProcessItem"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#novaPessoaFisica.xhtml"
+  PATH="/novaPessoaFisica.xhtml" SHAPE="864,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#novaPessoaFisica.xhtml:0" NAME="item"
+   PATH="/novaPessoaFisica.xhtml" model-entity="JSFProcessItem"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#novaPessoaJuridica.xhtml"
+  PATH="/novaPessoaJuridica.xhtml" SHAPE="1072,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#novaPessoaJuridica.xhtml:0" NAME="item"
+   PATH="/novaPessoaJuridica.xhtml" model-entity="JSFProcessItem"/>
  </PROCESS-ITEM>
 </PROCESS>
