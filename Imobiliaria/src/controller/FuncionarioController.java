@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 import javax.faces.model.SelectItem;
 
@@ -12,7 +12,7 @@ import modelo.Funcionario;
 import dao.FuncionarioDao;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class FuncionarioController {
 
 	private Funcionario funcionario = new Funcionario();
@@ -41,8 +41,9 @@ public class FuncionarioController {
 	}
 
 	public String editarFuncionario() {
+		this.funcionario.setTipoPessoa("funcionario");
 		this.funcionarioDao.edit(this.funcionario);
-		return "editSuccess";
+		return "login";
 	}
 
 	public void removerFuncionario(ActionEvent e) {
@@ -88,17 +89,16 @@ public class FuncionarioController {
 	public String validarUsuario(){
 		
 		FuncionarioDao funcionarioDao = new FuncionarioDao();
-		Funcionario func = null;
 		
 		try {
-			func = funcionarioDao.buscarPorLogin(this.usuario);
+			this.funcionario = funcionarioDao.buscarPorLogin(this.usuario);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		if(!func.equals(null)){
+		if(!this.funcionario.equals(null)){
 		
-			if(this.usuario.equals(func.getLogin()) && this.senha.equals(func.getSenha()) ){
+			if(this.usuario.equals(this.funcionario.getLogin()) && this.senha.equals(this.funcionario.getSenha()) ){
 				
 				return"principal";
 				
@@ -114,6 +114,8 @@ public class FuncionarioController {
 	}
 	
 	public String cadastrarUsuario(){
+		
+		this.funcionario = new Funcionario();
 		
 		return "novoFuncionario";
 		

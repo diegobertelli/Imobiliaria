@@ -39,6 +39,9 @@ public class FiadorController {
 
 	public String editarFiador() {
 		this.fiadorDao.edit(this.fiador);
+		
+		this.fiador = new Fiador();
+		
 		return "editSuccess";
 	}
 

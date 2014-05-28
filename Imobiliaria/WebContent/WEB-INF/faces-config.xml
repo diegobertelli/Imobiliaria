@@ -38,4 +38,12 @@
   <display-name>listaPessoaJuridica</display-name>
   <from-view-id>/listaPessoaJuridica.xhtml</from-view-id>
  </navigation-rule>
+ <navigation-rule>
+  <display-name>novoFiador</display-name>
+  <from-view-id>/novoFiador.xhtml</from-view-id>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>listaFiador</display-name>
+  <from-view-id>/listaFiador.xhtml</from-view-id>
+ </navigation-rule>
 </faces-config>

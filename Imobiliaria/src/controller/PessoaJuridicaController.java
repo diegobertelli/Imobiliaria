@@ -40,7 +40,11 @@ public class PessoaJuridicaController {
 	}
 
 	public String editarPessoaJuridica() {
+		this.pessoaJuridica.setTipoPessoa("juridica");
+		
 		this.pessoaJuridicaDao.edit(this.pessoaJuridica);
+		
+		this.pessoaJuridica = new PessoaJuridica();
 		return "editSuccess";
 	}
 

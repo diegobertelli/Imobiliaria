@@ -41,8 +41,12 @@ public class PessoaFisicaController {
 	}
 
 	public String editarPessoaFisica() {
+		this.pessoaFisica.setTipoPessoa("fisica");
+		
 		this.pessoaFisicaDao.edit(this.pessoaFisica);
-		return "editSuccess";
+		
+		this.pessoaFisica = new PessoaFisica();
+		return "novaPessoaFisica";
 	}
 
 	public void removerPessoaFisica(ActionEvent e) {

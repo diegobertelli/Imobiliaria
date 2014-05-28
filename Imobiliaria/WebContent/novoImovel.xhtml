@@ -25,7 +25,7 @@
 			<div class="panel-body" >
 
 				<h:form>
-					
+					<h:inputHidden value="#{imovelController.imovel.id}"/>
 					<div class="row">
 					
 						<!-- 
@@ -190,7 +190,7 @@
 				
 					<div class="control-group" style="margin-top: 10px;float:right;">				
 			    		<div class="controls">
-			    			<h:commandButton value="Salvar" action="#{imovelController.novoImovel()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
+			    			<h:commandButton value="Salvar" action="#{imovelController.editarImovel()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
 			    			<h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger" style="width: 150px;"/>
 			    		</div>
 			    	</div>

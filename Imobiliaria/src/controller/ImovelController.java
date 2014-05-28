@@ -51,7 +51,11 @@ public class ImovelController {
 	}
 
 	public String editarImovel() {
+		PessoaDao pessoaDao = new PessoaDao();
+		this.imovel.setPropietario(pessoaDao.find(new Long(prop)));
 		this.imovelDao.edit(this.imovel);
+		
+		this.imovel = new Imovel();
 		return "editSuccess";
 	}
 
