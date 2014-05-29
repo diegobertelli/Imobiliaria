@@ -19,29 +19,38 @@
 			  <div class="col-lg-3 text-center">
 				           
 			  </div>
+			  <h:form>
 			  <div class="col-lg-6 text-center">
-				    <div class="panel panel-info">
+				    <div class="panel panel-info">    
 						  <div class="panel-heading">
 							<i class="fa fa-comments fa-5x" style = "float: right;"></i>
 							<br/> <br/> <br/>
 							<div class="form-group" >
 							<label style = "float: left;">Nome:</label>
-							<input class="form-control"/>
+							<h:inputText class="form-control" value="#{emailController.nome}" />
 							</div> 
 							<div class="form-group" >
 							<label style = "float: left;">Email:</label>
-							<input class="form-control"/>
+							<h:inputText class="form-control" value="#{emailController.email}"/>
 							</div>
-							<textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+							<h:inputTextarea value="#{emailController.mensagem}" class="form-control" id="message" name="message" placeholder="Message" rows="5"/>
 						  </div>					  
-						<div class="panel-footer announcement-bottom">
+						<div class="panel-footer announcement-bottom" style="height: 60px;">
 						  <div >
-							  <label >Enviar</label>
-							  <a href="#"><i class="fa fa-arrow-circle-right" ></i></a>
+							  <div class="control-group" style="margin-top: 10px;">				
+					    		<div class="controls">
+					    			<h:commandButton value="Enviar" action="#{emailController.EnviarEmail()}" styleClass="btn btn-primary" style="margin-right: 10px;width: 150px;"/>
+					    		</div>
+					    	  </div>
 						  </div>
-						</div>  
+						</div> 
+						
+						 
 					</div>
 			  </div>
+			  
+			  </h:form>
+			  
 			  <div class="col-lg-3 text-center">
 				           
 			  </div>
