@@ -44,15 +44,15 @@ public class ImovelController {
 	}
 	
 	public String novoImovel() {
-		PessoaDao pessoaDao = new PessoaDao();
-		this.imovel.setPropietario(pessoaDao.find(new Long(prop)));
+		/*PessoaDao pessoaDao = new PessoaDao();
+		this.imovel.setPropietario(pessoaDao.find(new Long(prop)));*/
 		this.imovelDao.create(this.imovel);
 		return "newSuccess";
 	}
 
 	public String editarImovel() {
-		PessoaDao pessoaDao = new PessoaDao();
-		this.imovel.setPropietario(pessoaDao.find(new Long(prop)));
+		/*PessoaDao pessoaDao = new PessoaDao();
+		this.imovel.setPropietario(pessoaDao.find(new Long(prop)));*/
 		this.imovelDao.edit(this.imovel);
 		
 		this.imovel = new Imovel();
@@ -78,7 +78,7 @@ public class ImovelController {
 		List<Imovel> it = getListaImovels();
 		for (int i = 0; i < it.size(); i++) {
 			Imovel imovel = it.get(i);
-			list.add(new SelectItem(imovel, imovel.getId() + ""));
+			list.add(new SelectItem(imovel, imovel.getId().toString()));
 		}
 		return list;
 	}

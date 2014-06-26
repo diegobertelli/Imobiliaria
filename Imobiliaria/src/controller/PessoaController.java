@@ -10,6 +10,8 @@ import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 
 import modelo.Pessoa;
+import modelo.PessoaFisica;
+import modelo.PessoaJuridica;
 import dao.PessoaDao;
 
 @ManagedBean
@@ -65,11 +67,19 @@ public class PessoaController {
 		List<Pessoa> it = getListaPessoas();
 		for (int i = 0; i < it.size(); i++) {
 			Pessoa pessoa = it.get(i);
-			list.add(new SelectItem(pessoa, pessoa.getId() + ""));
+			if(pessoa instanceof PessoaFisica){
+				PessoaFisica pessoaFisica = (PessoaFisica) pessoa;
+				list.add(new SelectItem( pessoaFisica, pessoaFisica.getNome()));
+			}
+			if(pessoa instanceof PessoaJuridica){
+				PessoaJuridica pessoaJuridica = (PessoaJuridica) pessoa;
+				list.add(new SelectItem(pessoaJuridica, pessoaJuridica.getRazaoSocial()));
+			}
+			
 		}
 		return list;
 	}
-	
+
 	public void tipoPessoa(ValueChangeEvent event){
 		
 		this.setTipoPessoa(event.getNewValue().toString());

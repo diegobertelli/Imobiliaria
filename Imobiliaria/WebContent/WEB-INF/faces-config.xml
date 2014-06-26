@@ -10,7 +10,7 @@
   <display-name>novoCliente</display-name>
   <from-view-id>/novoCliente.xhtml</from-view-id>
  </navigation-rule>
-  <navigation-rule>
+ <navigation-rule>
   <display-name>login</display-name>
   <from-view-id>/login.xhtml</from-view-id>
  </navigation-rule>

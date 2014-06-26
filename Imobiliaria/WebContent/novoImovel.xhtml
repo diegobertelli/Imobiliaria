@@ -28,23 +28,18 @@
 					<h:inputHidden value="#{imovelController.imovel.id}"/>
 					<div class="row">
 					
-						<!-- 
-						<div class="col-lg-4 text-center">
-						<label style="margin-top: 10px;float: left;margin-right: 10px;">Nome Propritário:</label>
-						<h:selectOneMenu class="form-control"  style="width: 200px;" value="#{imovelController.imovel.propietario}" required="true">
-							<f:selectItems value="#{pessoaController.pessoas}"  />
-							<f:converter converterId="PessoaConverter"/>
-						</h:selectOneMenu><br/>
-			          	</div>  
-			          	-->
+						
 			          	
 			          	<div class="col-lg-4 text-center">
 						<label style="margin-top: 10px;float: left;margin-right: 10px;">Nome Propritário:</label>
-						<h:selectOneMenu id="proprietario" value="#{imovelController.prop}" onchange="submit()" class="form-control" required="true" >
-						<f:selectItem itemLabel=""/>
-				        <f:selectItems value="#{pessoaController.listaPessoas}" var="proprietario" itemLabel="#{proprietario.nome}" itemValue="#{proprietario.id}"/>
-				        </h:selectOneMenu>
-			          	</div>
+						<h:selectOneMenu class="form-control"  style="width: 200px;" value="#{imovelController.imovel.propietario}" required="true">
+							<f:selectItem itemLabel=""/>
+							<f:selectItems value="#{pessoaController.pessoas}"/>
+							<f:converter converterId="PessoaConverter"/>
+						</h:selectOneMenu><br/>
+			          	</div>   		          	
+			          	
+			          	
 			          	
 			        </div>
 					
@@ -75,6 +70,7 @@
 			          		<label style="margin-top: 10px;float: left;">UF:</label>
 							<br />
 			          		<h:selectOneMenu class="form-control" value="#{imovelController.imovel.uf}">
+			          			<f:selectItem itemLabel=""/>
 					        	<f:selectItems value="#{imovelController.estados}" />
 					    	</h:selectOneMenu>	 
 			            	           
@@ -142,8 +138,9 @@
 			          
 			          		<label style="margin-top: 10px;float: left;margin-right: 10px;">Situação:</label>
 			          		<h:selectOneMenu class="form-control"  value="#{imovelController.imovel.situacao}">
+			          		   <f:selectItem itemLabel=""/>
 							   <f:selectItem itemValue="venda" itemLabel="Venda" />
-							   <f:selectItem itemValue="locação" itemLabel="Locação" />	   							
+							   <f:selectItem itemValue="locacao" itemLabel="Locação" />	   							
 							</h:selectOneMenu>          
 			            	           
 			          </div>
@@ -151,6 +148,7 @@
 			          
 			          		<label style="margin-top: 10px;float: left;margin-right: 10px;">Finalidade:</label>
 			          		<h:selectOneMenu class="form-control"  value="#{imovelController.imovel.finalidade}">
+			          		   <f:selectItem itemLabel=""/>
 							   <f:selectItem itemValue="residencial" itemLabel="Residencial" />
 							   <f:selectItem itemValue="comercial" itemLabel="Comercial" />	   							
 							</h:selectOneMenu>     
@@ -166,6 +164,7 @@
 			          		<label style="margin-top: 10px;float: left;">Tipo Imóvel:</label>
 							<br />
 			          		<h:selectOneMenu class="form-control" value="#{imovelController.imovel.tipoImovel}">
+			          			<f:selectItem itemLabel=""/>
 					        	<f:selectItems value="#{imovelController.tipoImovel}" />
 					    	</h:selectOneMenu>		            
 			        

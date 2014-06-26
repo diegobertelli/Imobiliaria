@@ -23,7 +23,7 @@ public class PessoaFisicaDao extends DaoGenerico<PessoaFisica> {
 		try {
 			
 			getEntityManager().getTransaction().begin();
-			Query query = getEntityManager().createQuery("select pf from PessoaFisica as pf where pf.cpf = :cpf ");
+			Query query = getEntityManager().createQuery("select pf from PessoaFisica as pf where pf.cpf = :cpf");
 			query.setParameter("cpf", cpf);
 			pessoaFisica = (PessoaFisica) query.getSingleResult();
 			getEntityManager().getTransaction().commit();

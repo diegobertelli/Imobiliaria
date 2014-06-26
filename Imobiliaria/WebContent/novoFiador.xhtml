@@ -30,13 +30,15 @@
 						
 						<label style="margin-top: 10px; float:left;">Nome:</label>
 						<br />
-						<h:inputText class="form-control" value="#{fiadorController.fiador.nome}" />
-						
+						<h:inputText id="nome1" class="form-control" value="#{fiadorController.fiador.nome}" required="true" requiredMessage="Digite seu nome!"/>
 						</div>
 						<div class="col-lg-6 text-center">
 						<label for="exampleInputEmail1" style="margin-top: 10px;float:left;">Email:</label>
 						<br />
-						<h:inputText type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="#{fiadorController.fiador.email}" />
+						<h:inputText class="form-control" id="exampleInputEmail1"  value="#{fiadorController.fiador.email}" required="true" 
+										validatorMessage="E-mail inválido!" requiredMessage="Digite seu e-mail!">
+										<f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+" />
+						</h:inputText>
 						</div>
 					</div>	
 					
@@ -45,14 +47,13 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Telefone:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="(99)9999-9999" value="#{fiadorController.fiador.telefone}" />
-			            	           
+							<h:inputText id="telefone" type="text" class="form-control" value="#{fiadorController.fiador.telefone}" required="true" requiredMessage="Digite seu telefone!"/>		            	           
 			          </div>
 			          <div class="col-lg-4 text-center">
 			           	
 			           		<label style="margin-top: 10px;float: left;">CPF:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="999-999-999.99" value="#{fiadorController.fiador.cpf}" />
+							<h:inputText id="cpf" type="text" class="form-control" value="#{fiadorController.fiador.cpf}" />
 			                       
 			          </div>
 			          
@@ -83,7 +84,7 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Data de Nascimento:</label>
 							<br />
-							<h:inputText type="date" class="form-control" data-mask="" value="#{fiadorController.fiador.dataNascimento}" >
+							<h:inputText type="date" class="form-control" value="#{fiadorController.fiador.dataNascimento}" >
 							<f:convertDateTime type="date" pattern="dd/mm/yyyy" />
 			                </h:inputText>
 			          </div>
@@ -97,7 +98,9 @@
 			          </div>
 			          
 					</div>
-					
+					<div>
+					<h4><h:messages style="float: right; color: red;"/></h4><br/>
+					</div>
 					<hr size="10" />
 				
 					<div class="control-group" style="margin-top: 10px;float:right;">				
@@ -113,6 +116,7 @@
 		</div>
 		
 		</center>
+		
 		
 		</ui:define>
 	

@@ -23,7 +23,7 @@ public class PessoaJuridicaDao extends DaoGenerico<PessoaJuridica> {
 		try {
 			
 			getEntityManager().getTransaction().begin();
-			Query query = getEntityManager().createQuery("select pj from PessoaJuridica as pj where pf.cnpj = :cnpj ");
+			Query query = getEntityManager().createQuery("select pj from PessoaJuridica as pj where pj.cnpj = :cnpj");
 			query.setParameter("cnpj", cnpj);
 			pessoaJuridica = (PessoaJuridica) query.getSingleResult();
 			getEntityManager().getTransaction().commit();
