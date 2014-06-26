@@ -60,7 +60,9 @@
 							
 							<label style="margin-top: 10px;float: left;">CNPJ:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="99.999.999/9999-99" value="#{pessoaJuridicaController.pessoaJuridica.cnpj}" />
+							<h:inputText type="text" class="form-control" data-mask="99.999.999/9999-99" value="#{pessoaJuridicaController.pessoaJuridica.cnpj}" >
+								<f:validator validatorId="validator.CnpjValidator"/>
+							</h:inputText>
 			                       
 			          </div>
 			          

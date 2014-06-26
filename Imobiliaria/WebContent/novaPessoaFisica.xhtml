@@ -51,7 +51,9 @@
 			           	
 			           		<label style="margin-top: 10px;float: left;">CPF:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="999-999-999.99"  value="#{pessoaFisicaController.pessoaFisica.cpf}" />
+							<h:inputText type="text" class="form-control" value="#{pessoaFisicaController.pessoaFisica.cpf}"  >
+								<f:validator validatorId="validator.CpfValidator" />
+							</h:inputText>
 			                       
 			          </div>
 			          
@@ -85,6 +87,11 @@
 			                </h:inputText>
 			          </div>
 			         </div>
+					
+					<div>
+					<h4><h:messages style="float: right; color: red;"/></h4><br/>
+					</div>
+					<hr size="10" />
 					
 					<div class="control-group" style="margin-top: 21px;">				
 			    		<div class="controls">
