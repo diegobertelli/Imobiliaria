@@ -4,7 +4,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
       
-  <head>
+  <h:head>
     <meta charset="utf-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <meta name="description" content=""></meta>
@@ -12,18 +12,19 @@
 
     <title>Atlas - Gerenca Imobiliária</title>
 
-    <!-- Bootstrap core CSS -->
-    <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.css" />
-
-    <!-- Add custom CSS here -->
-    <link type="text/css" rel="stylesheet" href="resources/css/sb-admin.css" />
-    <link type="text/css" rel="stylesheet" href="resources/font-awesome/css/font-awesome.min.css" />
-    <!-- Page Specific CSS -->
+ 	<!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css"> </link>
     
-  </head>
+    <!-- Bootstrap core CSS -->
+    <h:outputStylesheet library="css" name="bootstrap.css" />
 
-  <body>
+    <!-- Add custom CSS here -->
+    <h:outputStylesheet library="css" name="sb-admin.css" />
+    <h:outputStylesheet library="font-awesome/css" name="font-awesome.min.css" />
+    
+  </h:head>
+
+  <h:body>
 
     <!-- Div que pega todo conteudo -->
 	
@@ -119,7 +120,11 @@
     <h:outputScript library="js/morris" name="chart-data-morris.js" />
     <h:outputScript library="js/tablesorter" name="jquery.tablesorter.js" />
     <h:outputScript library="js/tablesorter" name="tables.js" />
+    
 
-  </body>	
+
+
+
+  </h:body>
 	
 </html>

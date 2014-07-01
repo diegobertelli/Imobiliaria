@@ -3,8 +3,10 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.model.SelectItem;
 
@@ -21,6 +23,7 @@ public class FuncionarioController {
 	
 	private String usuario;
 	private String senha;
+	private String confirmaSenha;
 
 	public FuncionarioController() {
 
@@ -35,9 +38,18 @@ public class FuncionarioController {
 	}
 	
 	public String novoFuncionario() {
-		this.funcionario.setTipoPessoa("funcionario");
-		this.funcionarioDao.create(this.funcionario);
-		return "login";
+		
+		if(this.funcionario.getSenha().equals(this.confirmaSenha)){
+			this.funcionario.setTipoPessoa("funcionario");
+			this.funcionarioDao.create(this.funcionario);
+			return "login";
+		}else{
+			FacesContext context = FacesContext.getCurrentInstance();
+			FacesMessage facesMessage = new FacesMessage("A senha não foi confirmada corretamente.");
+			context.addMessage(null, facesMessage);
+			return null;
+		}
+		
 	}
 
 	public String editarFuncionario() {
@@ -86,6 +98,14 @@ public class FuncionarioController {
 		this.senha = senha;
 	}
 	
+	public String getConfirmaSenha() {
+		return confirmaSenha;
+	}
+
+	public void setConfirmaSenha(String confirmaSenha) {
+		this.confirmaSenha = confirmaSenha;
+	}
+	
 	public String validarUsuario(){
 		
 		FuncionarioDao funcionarioDao = new FuncionarioDao();
@@ -120,5 +140,17 @@ public class FuncionarioController {
 		return "novoFuncionario";
 		
 	}
+
+	public boolean confirmarSenha(){
+		FacesContext context = FacesContext.getCurrentInstance();
+		if(this.funcionario.getSenha().equals(this.confirmaSenha)){
+			return true;
+		}else{
+			FacesMessage facesMessage = new FacesMessage("A senha não foi confirmada corretamente.");
+			context.addMessage(null, facesMessage);
+			return false;
+		}
+	}
+
 	
 }

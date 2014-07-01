@@ -4,7 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html" 
       xmlns:f="http://java.sun.com/jsf/core">
 
- <head>
+ <h:head>
     <meta charset="utf-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <meta name="description" content=""></meta>
@@ -15,14 +15,19 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet"></link>
 
-    <!-- Add custom CSS here -->
-    <link href="css/sb-admin.css" rel="stylesheet"></link>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"></link>
-    <!-- Page Specific CSS -->
+   <!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css"> </link>
- </head>
+    
+    <!-- Bootstrap core CSS -->
+    <h:outputStylesheet library="css" name="bootstrap.css" />
 
-  <body style = "background-color: silver;">
+    <!-- Add custom CSS here -->
+    <h:outputStylesheet library="css" name="sb-admin.css" />
+    <h:outputStylesheet library="font-awesome/css" name="font-awesome.min.css" />
+    
+ </h:head>
+
+  <h:body style = "background-color: silver;">
   
   	<div style="position: absolute; margin-left: 27%; margin-right: auto; margin-top: 75px;">
 
@@ -77,18 +82,20 @@
   	</div>
   
   
-    <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
+     <!-- JavaScript -->
+    <h:outputScript library="js" name="jquery-1.10.2.js" />
+    <h:outputScript library="js" name="bootstrap.js" />
+    <h:outputScript library="js" name="jquery.maskedinput.js" />
+    <h:outputScript library="js" name="mascaras.js" />
 
     <!-- Page Specific Plugins -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-    <script src="js/morris/chart-data-morris.js"></script>
-    <script src="js/tablesorter/jquery.tablesorter.js"></script>
-    <script src="js/tablesorter/tables.js"></script>
+    <h:outputScript library="js/morris" name="chart-data-morris.js" />
+    <h:outputScript library="js/tablesorter" name="jquery.tablesorter.js" />
+    <h:outputScript library="js/tablesorter" name="tables.js" />
 
-  </body>
+  </h:body>
 
    
    

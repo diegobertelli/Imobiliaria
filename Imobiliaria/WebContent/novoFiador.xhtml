@@ -53,7 +53,9 @@
 			           	
 			           		<label style="margin-top: 10px;float: left;">CPF:</label>
 							<br />
-							<h:inputText id="cpf" type="text" class="form-control" value="#{fiadorController.fiador.cpf}" />
+							<h:inputText id="cpf" type="text" class="form-control" value="#{fiadorController.fiador.cpf}" required="true" requiredMessage="Digite seu CPF!">
+								<f:validator validatorId="validator.CpfValidator" />
+							</h:inputText>
 			                       
 			          </div>
 			          
@@ -61,7 +63,7 @@
 			           	
 			           		<label style="margin-top: 10px;float: left;">RG:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{fiadorController.fiador.rg}" />
+							<h:inputText type="text" class="form-control" data-mask="" value="#{fiadorController.fiador.rg}" required="true" requiredMessage="Digite seu CPF!"/>
 			                       
 			          </div>
 			          
@@ -93,7 +95,7 @@
 			            
 			            	<label style="float: left; margin-top: 10px;">Renda:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="R$ 999999.99" value="#{fiadorController.fiador.renda}" />
+							<h:inputText type="text" class="form-control" value="#{fiadorController.fiador.renda}" />
 			                       
 			          </div>
 			          
