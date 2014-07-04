@@ -21,7 +21,7 @@
 			</div>
 			<div class="panel-body" >
 
-				<h:form>
+				<h:form prependId="false">
 	
 					<h:inputHidden value="#{pessoaFisicaController.pessoaFisica.id}"/>
 					<div class="row">
@@ -35,7 +35,7 @@
 						<div class="col-lg-6 text-center">
 						<label for="exampleInputEmail1" style="margin-top: 10px;float:left;">Email:</label>
 						<br />
-						<h:inputText type="email" class="form-control" id="exampleInputEmail1"  placeholder="Email" value="#{pessoaFisicaController.pessoaFisica.email}" />
+						<h:inputText type="email" class="form-control" id="email"  placeholder="Email" value="#{pessoaFisicaController.pessoaFisica.email}" />
 						</div>
 					</div>	
 					
@@ -44,14 +44,14 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Telefone:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="(99)9999-9999"  value="#{pessoaFisicaController.pessoaFisica.telefone}" />
+							<h:inputText id="telefone" type="text" class="form-control" value="#{pessoaFisicaController.pessoaFisica.telefone}" />
 			            	           
 			          </div>
 			          <div class="col-lg-4 text-center">
 			           	
 			           		<label style="margin-top: 10px;float: left;">CPF:</label>
 							<br />
-							<h:inputText type="text" class="form-control" value="#{pessoaFisicaController.pessoaFisica.cpf}"  >
+							<h:inputText id="cpf" type="text" class="form-control" value="#{pessoaFisicaController.pessoaFisica.cpf}"  >
 								<f:validator validatorId="validator.CpfValidator" />
 							</h:inputText>
 			                       
@@ -82,7 +82,7 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Data de Nascimento:</label>
 							<br />
-							<h:inputText type="date" class="form-control" data-mask=""  value="#{pessoaFisicaController.pessoaFisica.dataNascimento}" >
+							<h:inputText id="data" type="date" class="form-control"  value="#{pessoaFisicaController.pessoaFisica.dataNascimento}" >
 							<f:convertDateTime type="date" pattern="dd/mm/yyyy" />
 			                </h:inputText>
 			          </div>

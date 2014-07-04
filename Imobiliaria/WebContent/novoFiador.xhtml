@@ -23,19 +23,19 @@
 			</div>
 			<div class="panel-body" >
 
-				<h:form>
+				<h:form prependId="false">
 					<h:inputHidden value="#{fiadorController.fiador.id}"/>
 					<div class="row">
 						<div class="col-lg-6 text-center">
 						
 						<label style="margin-top: 10px; float:left;">Nome:</label>
 						<br />
-						<h:inputText id="nome1" class="form-control" value="#{fiadorController.fiador.nome}" required="true" requiredMessage="Digite seu nome!"/>
+						<h:inputText id="nome" class="form-control" value="#{fiadorController.fiador.nome}" required="true" requiredMessage="Digite seu nome!"/>
 						</div>
 						<div class="col-lg-6 text-center">
 						<label for="exampleInputEmail1" style="margin-top: 10px;float:left;">Email:</label>
 						<br />
-						<h:inputText class="form-control" id="exampleInputEmail1"  value="#{fiadorController.fiador.email}" required="true" 
+						<h:inputText class="form-control" id="email"  value="#{fiadorController.fiador.email}" required="true" 
 										validatorMessage="E-mail inválido!" requiredMessage="Digite seu e-mail!">
 										<f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+" />
 						</h:inputText>
@@ -86,7 +86,7 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Data de Nascimento:</label>
 							<br />
-							<h:inputText type="date" class="form-control" value="#{fiadorController.fiador.dataNascimento}" >
+							<h:inputText id="data" type="date" class="form-control" value="#{fiadorController.fiador.dataNascimento}" >
 							<f:convertDateTime type="date" pattern="dd/mm/yyyy" />
 			                </h:inputText>
 			          </div>
