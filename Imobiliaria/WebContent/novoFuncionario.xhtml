@@ -135,18 +135,21 @@
 					            
 					            	<label style="margin-top: 10px;float: left; ">Senha:</label>
 									<br />
-									<h:inputText type="" style="background-color: #d9edf7;" class="form-control"  value="#{funcionarioController.funcionario.login}" />
+									<h:inputText type="" style="background-color: #d9edf7;" class="form-control"  value="#{funcionarioController.funcionario.senha}" />
 					            	           
 					          </div>
 					          <div class="col-lg-6 text-center">
 					           	
 					           		<label style="margin-top: 10px;float: left;">Confirmar Senha:</label>
 									<br />
-									<h:inputText type="" style="background-color: #d9edf7;" class="form-control"  value="#{funcionarioController.confirmarSenha}" />				                       
+									<h:inputText type="" style="background-color: #d9edf7;" class="form-control"  value="#{funcionarioController.confirmaSenha}" />				                       
 					          </div>
 							</div>
 								
 							<br/>
+							<div>
+							<h4><h:messages style="float: right; color: red;"/></h4><br/>
+							</div>
   						</div>
   					</div>
   				</div>
