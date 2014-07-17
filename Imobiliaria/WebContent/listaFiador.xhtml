@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
 
-	<ui:composition template="template.xhtml">
+	<ui:composition template="template.xhtml" >
 	
-	<ui:define name="corpo">
+	<ui:define name="corpo" >
 	
 			<h1>
 			Sistema Imobiliário <small> Lista Fiadores </small>
@@ -17,14 +18,39 @@
 			
 			<center>
 			
+			<h:form id="fiador" prependId="false" >	
+			
+			<div class="row">
+			    <div class="col-lg-4 text-center">
+			            
+			        <label style="margin-top: 10px;float: left;">Buscar por nome:</label>
+					<br />
+					<h:inputText id="nome" type="text" class="form-control" value="#{fiadorController.nome}"/>		            	           
+			    </div>
+			          
+			    <div class="col-lg-4 text-center">
+			         
+			         <br /> 	
+			        <div class="control-group" style="margin-top: 15px;float:left;">				
+			    		<div class="controls">
+			    			<h:commandButton id="buscar" value="Buscar" styleClass="btn btn-primary" style="margin-right: 10px;width: 150px;">
+			    				<f:ajax listener="#{fiadorController.buscarPorNome}" execute="fiador:nome" render=":fiador" event="click" />
+			    			</h:commandButton>
+			    		</div>
+			    	</div>
+			                       
+				</div>			        
+			          
+			</div><br /> <br /> 
+			
 			<div class="panel panel-primary" >
 				<div class="panel-heading">
 					<h3 class="panel-title" >Lista de Fiadores</h3>
 				</div>
 					<div class="panel-body" >
 
-			<h:form>
-				<h:dataTable value="#{fiadorController.listaFiadors}" var="fiador" styleClass="table table-hover">
+
+				<h:dataTable id="lista" value="#{fiadorController.fiadores}" var="fiador" styleClass="table table-hover" >
 					<h:column>
 						<f:facet name="header">Nome</f:facet>
 						<h:outputText value="#{fiador.nome}" />
@@ -84,26 +110,39 @@
 						<f:facet name="header" >
 							<h:outputText value="Editar"/>
 						</f:facet>
-						<h:commandLink value="editar" type="submit" action="novoFiador" actionListener="#{fiadorController.buscarFiador}" >
+						<center>
+						<p:commandButton icon="ui-icon-pencil" type="submit" action="novoFiador" actionListener="#{fiadorController.buscarFiador}" >
 							<f:attribute name="codFiador" value="#{fiador.id}"/>
-						</h:commandLink>
+						</p:commandButton>
+						</center>
 					</h:column>
 					<h:column>
 						<f:facet name="header" >
 							<h:outputText value="Remover"/>
 						</f:facet>
-						<h:commandLink value="remover" type="submit" actionListener="#{fiadorController.removerFiador}" >
-							<f:attribute name="codFiador" value="#{fiador.id}"/>
-						</h:commandLink>
+						<center>
+						<p:commandButton icon="ui-icon-trash" oncomplete="confirmacao.show()" >
+							<f:setPropertyActionListener target="#{fiadorController.fiador}" value="#{fiador}" />
+						</p:commandButton>
+						</center>
 					</h:column>
 	                
 				</h:dataTable>
+				
+				</div>
+			
+				</div>
+			
+				<p:confirmDialog header="Exclusão de Fiador" 
+					message="Tem certeza que deseja excluir o Fiador?"
+					widgetVar="confirmacao">
+			
+					<p:commandButton value="Sim" update="lista" oncomplete="confirmacao.hide()" action="#{fiadorController.excluirFiador()}"/>
+					<p:button value="Não" onclick="confirmacao.hide(); return false;" />
+			
+				</p:confirmDialog>
 
 			</h:form>
-			
-			</div>
-			
-		</div>
 		
 		</center>
 			

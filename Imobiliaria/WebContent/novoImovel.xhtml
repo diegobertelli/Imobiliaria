@@ -24,7 +24,7 @@
 			</div>
 			<div class="panel-body" >
 
-				<h:form>
+				<h:form prependId="false">
 					<h:inputHidden value="#{imovelController.imovel.id}"/>
 					<div class="row">
 					
@@ -47,7 +47,7 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Numero Escritura:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.numeroEscritura}" />
+							<h:inputText id="numeroEscritura" type="text" class="form-control" value="#{imovelController.imovel.numeroEscritura}" />
 			            	           
 			          </div>
 			          <div class="col-lg-4 text-center">
@@ -60,7 +60,7 @@
 			        
 			        <label style="margin-top: 10px;float: left;">Endereço:</label>
 					<br />
-					<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.endereco}" />
+					<h:inputText id="endereco" type="text" class="form-control" value="#{imovelController.imovel.endereco}" />
 					
 					<div class="row">
 			          <div class="col-lg-2 text-center">
@@ -77,13 +77,13 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">CEP:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.cep}" />	           
+							<h:inputText id="cep" type="text" class="form-control" value="#{imovelController.imovel.cep}" />	           
 			          </div>
 			          <div class="col-lg-4 text-center">
 			            
 			            	<label style="margin-top: 10px;float: left;">Bairro:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.bairro}" />	           
+							<h:inputText id="bairro" type="text" class="form-control" value="#{imovelController.imovel.bairro}" />	           
 			          </div>
 			          
 			        </div>
@@ -93,32 +93,32 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Cidade:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.cidade}" />
+							<h:inputText id="cidade" type="text" class="form-control" value="#{imovelController.imovel.cidade}" />
 			            	           
 			          </div>
 			           <div class="col-lg-2 text-center">
 			            
 			            	<label style="margin-top: 10px;float: left;">Tamanho:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.tamanho}" />	           
+							<h:inputText id="tamanho" type="text" class="form-control" value="#{imovelController.imovel.tamanho}" />	           
 			          </div>
 			          <div class="col-lg-2 text-center">
 			            
 			            	<label style="margin-top: 10px;float: left;">Quartos:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.quartos}" />	           
+							<h:inputText id="quarto" type="text" class="form-control"  style="height:25px" value="#{imovelController.imovel.quartos}" />	           
 			          </div>
 			          <div class="col-lg-2 text-center">
 			            
 			            	<label style="margin-top: 10px;float: left;">Salas:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.salas}" />	           
+							<h:inputText id="sala" type="text" class="form-control"  style="height:25px" value="#{imovelController.imovel.salas}" />	           
 			          </div>
 			          <div class="col-lg-2 text-center">
 			            
 			            	<label style="margin-top: 10px;float: left;">Banheiros:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.banheiros}" />	           
+							<h:inputText id="banheiro" type="text" class="form-control"  style="height:25px" value="#{imovelController.imovel.banheiros}" />	           
 			          </div>
 			          
 			        </div>
@@ -129,7 +129,7 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Vagas Garagem:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.vagasGaragem}" />
+							<h:inputText id="garagem" type="text" class="form-control"  style="height:25px" value="#{imovelController.imovel.vagasGaragem}" />
 			            	           
 			          </div>
 			          <div class="col-lg-4 text-center">
@@ -171,14 +171,14 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Valor Imóvel:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.valorImovel}" />	           
+							<h:inputText id="valorImovel" type="text" class="form-control" value="#{imovelController.imovel.valorImovel}" />	           
 			          </div>
 			          
 			          <div class="col-lg-2 text-center">
 			            
 			            	<label style="margin-top: 10px;float: left;">Valor IPTU:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{imovelController.imovel.valorIptu}" />	           
+							<h:inputText id="valorIPTU" type="text" class="form-control" value="#{imovelController.imovel.valorIptu}" />	           
 			          </div>
 			          
 			        </div>
@@ -187,8 +187,8 @@
 				
 					<div class="control-group" style="margin-top: 10px;float:right;">				
 			    		<div class="controls">
-			    			<h:commandButton value="Salvar" action="#{imovelController.editarImovel()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
-			    			<h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger" style="width: 150px;"/>
+			    			<h:commandButton id="salvar" value="Salvar" action="#{imovelController.editarImovel()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
+			    			<h:commandButton id="limpar" value="Limpar" type="reset" styleClass="btn btn-danger" style="width: 150px;"/>
 			    		</div>
 			    	</div>
 			        
@@ -201,8 +201,6 @@
 		</center>
 		
 		</ui:define>
-		
-	
 	
 	</ui:composition>
 </html>

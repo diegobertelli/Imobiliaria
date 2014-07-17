@@ -53,7 +53,7 @@
 			           	
 			           		<label style="margin-top: 10px;float: left;">CPF:</label>
 							<br />
-							<h:inputText id="cpf" type="text" class="form-control" value="#{fiadorController.fiador.cpf}" required="true" requiredMessage="Digite seu CPF!">
+							<h:inputText id="cpf" type="text" class="form-control" value="#{fiadorController.fiador.cpf}" >
 								<f:validator validatorId="validator.CpfValidator" />
 							</h:inputText>
 			                       
@@ -95,13 +95,13 @@
 			            
 			            	<label style="float: left; margin-top: 10px;">Renda:</label>
 							<br />
-							<h:inputText type="text" class="form-control" value="#{fiadorController.fiador.renda}" />
+							<h:inputText id="renda" type="text" class="form-control" value="#{fiadorController.fiador.renda}" />
 			                       
 			          </div>
 			          
 					</div>
 					<div>
-					<h4><h:messages style="float: right; color: red;"/></h4><br/>
+					
 					</div>
 					<hr size="10" />
 				
@@ -118,7 +118,27 @@
 		</div>
 		
 		</center>
-		
+					
+					<!-- Modal -->
+					<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+					
+					<!-- Modal -->    
+				      <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+				      <div class="modal-dialog">
+				      <div class="modal-content">
+				      <div></div>
+				      	<div class="modal-header">
+				      		<h3 id="myModalLabel">Aviso</h3>
+				      	</div>
+				      	<div class="modal-body">
+				      		<h4><h:messages style="float: right; color: red;"/></h4><br/>
+				      	</div>
+				      	<div class="modal-footer">
+				          	<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Não</button>
+				      	</div>
+				      </div>
+				      </div>
+				      </div>
 		
 		</ui:define>
 	

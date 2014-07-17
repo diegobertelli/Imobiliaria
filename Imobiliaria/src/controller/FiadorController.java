@@ -1,12 +1,13 @@
 package controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
-import javax.faces.model.SelectItem;
+import javax.faces.event.AjaxBehaviorEvent;
 
 import modelo.Fiador;
 import dao.FiadorDao;
@@ -14,15 +15,22 @@ import dao.FiadorDao;
 @ManagedBean
 @RequestScoped
 public class FiadorController {
-	
+
 	private Fiador fiador = new Fiador();
-	
+
+	private String nome;
+
 	private FiadorDao fiadorDao = new FiadorDao();
-	
+
+	private List<Fiador> fiadores;
+
 	public FiadorController() {
-		
+
+		buscarListaFiadores();
 		
 	}
+
+	/** GET E SET **/
 
 	public Fiador getFiador() {
 		return fiador;
@@ -31,7 +39,26 @@ public class FiadorController {
 	public void setFiador(Fiador fiador) {
 		this.fiador = fiador;
 	}
-	
+
+	public List<Fiador> getFiadores() {
+		return fiadores;
+	}
+
+	public void setFiadores(List<Fiador> fiadores) {
+		this.fiadores = fiadores;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+		buscarListaFiadores();
+	}
+
+	/** METODOS **/
+
 	public String novoFiador() {
 		this.fiadorDao.create(this.fiador);
 		return "newSuccess";
@@ -39,10 +66,14 @@ public class FiadorController {
 
 	public String editarFiador() {
 		this.fiadorDao.edit(this.fiador);
-		
+
 		this.fiador = new Fiador();
-		
+
 		return "editSuccess";
+	}
+	
+	public void excluirFiador(){
+		this.fiadorDao.remove(this.fiador);
 	}
 
 	public void removerFiador(ActionEvent e) {
@@ -55,18 +86,39 @@ public class FiadorController {
 		this.fiador = this.fiadorDao.find(id);
 	}
 
-	public List<Fiador> getListaFiadors() {
-		return this.fiadorDao.findAll();
+	public void exibirErros(final AjaxBehaviorEvent event) {
+		FacesContext context = FacesContext.getCurrentInstance();
+		List<FacesMessage> messages = context.getMessageList();
+		if (messages.equals(null)) {
+			
+		} else {
+			
+		}
 	}
 
-	public List<SelectItem> getFiadors() {
-		List<SelectItem> list = new ArrayList<SelectItem>();
-		List<Fiador> it = getListaFiadors();
-		for (int i = 0; i < it.size(); i++) {
-			Fiador fiador = it.get(i);
-			list.add(new SelectItem(fiador, fiador.getId() + ""));
+	public void buscarListaFiadores() {
+		if(this.nome == null){
+			try {
+				this.fiadores = this.fiadorDao.findAll();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			try {
+				this.fiadores = this.fiadorDao.buscarPorNome(this.nome);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		return list;
 	}
+
+	public void buscarPorNome(AjaxBehaviorEvent event) {
+		try {
+			/**this.fiadores = this.fiadorDao.buscarPorNome(this.nome);**/
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 
 }
