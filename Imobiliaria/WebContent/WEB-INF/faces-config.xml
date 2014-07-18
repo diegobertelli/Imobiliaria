@@ -40,10 +40,10 @@
  </navigation-rule>
  <navigation-rule>
   <display-name>novoFiador</display-name>
-  <from-view-id>/novoFiador.xhtml</from-view-id>
+  <from-view-id>/cadastroFiador.xhtml</from-view-id>
  </navigation-rule>
  <navigation-rule>
   <display-name>listaFiador</display-name>
-  <from-view-id>/listaFiador.xhtml</from-view-id>
+  <from-view-id>/pesquisaFiador.xhtml</from-view-id>
  </navigation-rule>
 </faces-config>

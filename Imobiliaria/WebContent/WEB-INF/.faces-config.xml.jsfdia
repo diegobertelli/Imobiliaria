@@ -40,14 +40,14 @@
   <PROCESS-ITEM ID="rules:#novaPessoaJuridica.xhtml:0" NAME="item"
    PATH="/novaPessoaJuridica.xhtml" model-entity="JSFProcessItem"/>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#novoFiador.xhtml" PATH="/novoFiador.xhtml"
-  SHAPE="448,129,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#novoFiador.xhtml:0" NAME="item"
-   PATH="/novoFiador.xhtml" model-entity="JSFProcessItem"/>
+ <PROCESS-ITEM NAME="rules:#cadastroFiador.xhtml"
+  PATH="/cadastroFiador.xhtml" SHAPE="448,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#cadastroFiador.xhtml:0" NAME="item"
+   PATH="/cadastroFiador.xhtml" model-entity="JSFProcessItem"/>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#listaFiador.xhtml" PATH="/listaFiador.xhtml"
-  SHAPE="656,145,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#listaFiador.xhtml:0" NAME="item"
-   PATH="/listaFiador.xhtml" model-entity="JSFProcessItem"/>
+ <PROCESS-ITEM NAME="rules:#pesquisaFiador.xhtml"
+  PATH="/pesquisaFiador.xhtml" SHAPE="656,145,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pesquisaFiador.xhtml:0" NAME="item"
+   PATH="/pesquisaFiador.xhtml" model-entity="JSFProcessItem"/>
  </PROCESS-ITEM>
 </PROCESS>

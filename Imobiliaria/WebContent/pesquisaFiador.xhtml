@@ -25,7 +25,7 @@
 			            
 			        <label style="margin-top: 10px;float: left;">Buscar por nome:</label>
 					<br />
-					<h:inputText id="nome" type="text" class="form-control" value="#{fiadorController.nome}"/>		            	           
+					<h:inputText id="nome" type="text" class="form-control" value="#{pesquisaFiadorController.nome}"/>		            	           
 			    </div>
 			          
 			    <div class="col-lg-4 text-center">
@@ -34,7 +34,7 @@
 			        <div class="control-group" style="margin-top: 15px;float:left;">				
 			    		<div class="controls">
 			    			<h:commandButton id="buscar" value="Buscar" styleClass="btn btn-primary" style="margin-right: 10px;width: 150px;">
-			    				<f:ajax listener="#{fiadorController.buscarPorNome}" execute="fiador:nome" render=":fiador" event="click" />
+			    				<f:ajax listener="#{pesquisaFiadorController.buscarPorNome}" execute="fiador:nome" render=":fiador" event="click" />
 			    			</h:commandButton>
 			    		</div>
 			    	</div>
@@ -50,7 +50,7 @@
 					<div class="panel-body" >
 
 
-				<h:dataTable id="lista" value="#{fiadorController.fiadores}" var="fiador" styleClass="table table-hover" >
+				<h:dataTable id="lista" value="#{pesquisaFiadorController.fiadores}" var="fiador" styleClass="table table-hover" >
 					<h:column>
 						<f:facet name="header">Nome</f:facet>
 						<h:outputText value="#{fiador.nome}" />
@@ -111,8 +111,8 @@
 							<h:outputText value="Editar"/>
 						</f:facet>
 						<center>
-						<p:commandButton icon="ui-icon-pencil" type="submit" action="novoFiador" actionListener="#{fiadorController.buscarFiador}" >
-							<f:attribute name="codFiador" value="#{fiador.id}"/>
+						<p:commandButton icon="ui-icon-pencil" action="cadastroFiador" >
+							<f:setPropertyActionListener target="#{cadastroFiadorController.fiador}" value="#{fiador}" />
 						</p:commandButton>
 						</center>
 					</h:column>
@@ -122,7 +122,7 @@
 						</f:facet>
 						<center>
 						<p:commandButton icon="ui-icon-trash" oncomplete="confirmacao.show()" >
-							<f:setPropertyActionListener target="#{fiadorController.fiador}" value="#{fiador}" />
+							<f:setPropertyActionListener target="#{pesquisaFiadorController.fiador}" value="#{fiador}" />
 						</p:commandButton>
 						</center>
 					</h:column>
@@ -137,7 +137,7 @@
 					message="Tem certeza que deseja excluir o Fiador?"
 					widgetVar="confirmacao">
 			
-					<p:commandButton value="Sim" update="lista" oncomplete="confirmacao.hide()" action="#{fiadorController.excluirFiador()}"/>
+					<p:commandButton value="Sim" update="lista" oncomplete="confirmacao.hide()" action="#{pesquisaFiadorController.excluirFiador()}"/>
 					<p:button value="Não" onclick="confirmacao.hide(); return false;" />
 			
 				</p:confirmDialog>

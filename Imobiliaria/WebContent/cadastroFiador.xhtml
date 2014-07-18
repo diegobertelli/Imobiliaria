@@ -24,18 +24,18 @@
 			<div class="panel-body" >
 
 				<h:form prependId="false">
-					<h:inputHidden value="#{fiadorController.fiador.id}"/>
+					<h:inputHidden value="#{cadastroFiadorController.fiador.id}"/>
 					<div class="row">
 						<div class="col-lg-6 text-center">
 						
 						<label style="margin-top: 10px; float:left;">Nome:</label>
 						<br />
-						<h:inputText id="nome" class="form-control" value="#{fiadorController.fiador.nome}" required="true" requiredMessage="Digite seu nome!"/>
+						<h:inputText id="nome" class="form-control" value="#{cadastroFiadorController.fiador.nome}" required="true" requiredMessage="Digite seu nome!"/>
 						</div>
 						<div class="col-lg-6 text-center">
 						<label for="exampleInputEmail1" style="margin-top: 10px;float:left;">Email:</label>
 						<br />
-						<h:inputText class="form-control" id="email"  value="#{fiadorController.fiador.email}" required="true" 
+						<h:inputText class="form-control" id="email"  value="#{cadastroFiadorController.fiador.email}" required="true" 
 										validatorMessage="E-mail inválido!" requiredMessage="Digite seu e-mail!">
 										<f:validateRegex pattern="[a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9\-\_\.]+" />
 						</h:inputText>
@@ -47,13 +47,13 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Telefone:</label>
 							<br />
-							<h:inputText id="telefone" type="text" class="form-control" value="#{fiadorController.fiador.telefone}" required="true" requiredMessage="Digite seu telefone!"/>		            	           
+							<h:inputText id="telefone" type="text" class="form-control" value="#{cadastroFiadorController.fiador.telefone}" required="true" requiredMessage="Digite seu telefone!"/>		            	           
 			          </div>
 			          <div class="col-lg-4 text-center">
 			           	
 			           		<label style="margin-top: 10px;float: left;">CPF:</label>
 							<br />
-							<h:inputText id="cpf" type="text" class="form-control" value="#{fiadorController.fiador.cpf}" >
+							<h:inputText id="cpf" type="text" class="form-control" value="#{cadastroFiadorController.fiador.cpf}" >
 								<f:validator validatorId="validator.CpfValidator" />
 							</h:inputText>
 			                       
@@ -63,7 +63,7 @@
 			           	
 			           		<label style="margin-top: 10px;float: left;">RG:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{fiadorController.fiador.rg}" required="true" requiredMessage="Digite seu CPF!"/>
+							<h:inputText type="text" class="form-control" data-mask="" value="#{cadastroFiadorController.fiador.rg}" required="true" requiredMessage="Digite seu CPF!"/>
 			                       
 			          </div>
 			          
@@ -75,7 +75,7 @@
 			          <div class="col-lg-4 text-center">
 			            
 			            	<label style="margin-top: 10px; float: left;">Sexo:</label>
-							<h:selectOneMenu class="form-control"  value="#{fiadorController.fiador.sexo}">
+							<h:selectOneMenu class="form-control"  value="#{cadastroFiadorController.fiador.sexo}">
 								<f:selectItem itemValue="" itemLabel="" />
 								<f:selectItem itemValue="masculino" itemLabel="Masculino" />
 								<f:selectItem itemValue="feminino" itemLabel="Feminino" />
@@ -86,7 +86,7 @@
 			            
 			            	<label style="margin-top: 10px;float: left;">Data de Nascimento:</label>
 							<br />
-							<h:inputText id="data" type="date" class="form-control" value="#{fiadorController.fiador.dataNascimento}" >
+							<h:inputText id="data" type="date" class="form-control" value="#{cadastroFiadorController.fiador.dataNascimento}" >
 							<f:convertDateTime type="date" pattern="dd/mm/yyyy" />
 			                </h:inputText>
 			          </div>
@@ -95,7 +95,7 @@
 			            
 			            	<label style="float: left; margin-top: 10px;">Renda:</label>
 							<br />
-							<h:inputText id="renda" type="text" class="form-control" value="#{fiadorController.fiador.renda}" />
+							<h:inputText id="renda" type="text" class="form-control" value="#{cadastroFiadorController.fiador.renda}" converter="MoedaConverter"/>
 			                       
 			          </div>
 			          
@@ -107,7 +107,7 @@
 				
 					<div class="control-group" style="margin-top: 10px;float:right;">				
 			    		<div class="controls">
-			    			<h:commandButton value="Salvar" action="#{fiadorController.editarFiador()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
+			    			<h:commandButton value="Salvar" action="#{cadastroFiadorController.editarFiador()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
 			    			<h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger" style="width: 150px;"/>
 			    		</div>
 			    	</div>
@@ -118,27 +118,6 @@
 		</div>
 		
 		</center>
-					
-					<!-- Modal -->
-					<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
-					
-					<!-- Modal -->    
-				      <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-				      <div class="modal-dialog">
-				      <div class="modal-content">
-				      <div></div>
-				      	<div class="modal-header">
-				      		<h3 id="myModalLabel">Aviso</h3>
-				      	</div>
-				      	<div class="modal-body">
-				      		<h4><h:messages style="float: right; color: red;"/></h4><br/>
-				      	</div>
-				      	<div class="modal-footer">
-				          	<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Não</button>
-				      	</div>
-				      </div>
-				      </div>
-				      </div>
 		
 		</ui:define>
 	
