@@ -37,10 +37,10 @@
 			    				<f:ajax listener="#{pesquisaFiadorController.buscarPorNome}" execute="fiador:nome" render=":fiador" event="click" />
 			    			</h:commandButton>
 			    		</div>
-			    	</div>
+			    	</div>			 
 			                       
-				</div>			        
-			          
+				</div>
+				       
 			</div><br /> <br /> 
 			
 			<div class="panel panel-primary" >
@@ -111,17 +111,17 @@
 							<h:outputText value="Editar"/>
 						</f:facet>
 						<center>
-						<p:commandButton icon="ui-icon-pencil" action="cadastroFiador" >
-							<f:setPropertyActionListener target="#{cadastroFiadorController.fiador}" value="#{fiador}" />
-						</p:commandButton>
+						<p:button outcome="/cadastroFiador" icon="ui-icon-pencil" title="Editar">
+		    				<f:param name="fiador" value="#{fiador.id}" />
+		    			</p:button>
 						</center>
 					</h:column>
 					<h:column>
 						<f:facet name="header" >
-							<h:outputText value="Remover"/>
+							<h:outputText value="Excluir"/>
 						</f:facet>
 						<center>
-						<p:commandButton icon="ui-icon-trash" oncomplete="confirmacao.show()" >
+						<p:commandButton id="excluir" icon="ui-icon-trash" oncomplete="confirmacao.show()" process="@this" >
 							<f:setPropertyActionListener target="#{pesquisaFiadorController.fiador}" value="#{fiador}" />
 						</p:commandButton>
 						</center>
@@ -132,12 +132,12 @@
 				</div>
 			
 				</div>
-			
-				<p:confirmDialog header="Exclusão de Fiador" 
-					message="Tem certeza que deseja excluir o Fiador?"
+				
+				<p:confirmDialog header="Exclusão de produto" 
+					message="Tem certeza que deseja excluir o produto?"
 					widgetVar="confirmacao">
 			
-					<p:commandButton value="Sim" update="lista" oncomplete="confirmacao.hide()" action="#{pesquisaFiadorController.excluirFiador()}"/>
+					<p:commandButton value="Sim" update=":fiador:lista" oncomplete="confirmacao.hide();" action="#{pesquisaFiadorController.excluirFiador}" process="@this"/>
 					<p:button value="Não" onclick="confirmacao.hide(); return false;" />
 			
 				</p:confirmDialog>

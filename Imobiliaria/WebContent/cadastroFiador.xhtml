@@ -63,7 +63,7 @@
 			           	
 			           		<label style="margin-top: 10px;float: left;">RG:</label>
 							<br />
-							<h:inputText type="text" class="form-control" data-mask="" value="#{cadastroFiadorController.fiador.rg}" required="true" requiredMessage="Digite seu CPF!"/>
+							<h:inputText id="rg" type="text" class="form-control" data-mask="" value="#{cadastroFiadorController.fiador.rg}" required="true" requiredMessage="Digite seu CPF!"/>
 			                       
 			          </div>
 			          
@@ -101,13 +101,14 @@
 			          
 					</div>
 					<div>
-					
+						<h:messages style="float:right;color:red;"/>
 					</div>
 					<hr size="10" />
 				
 					<div class="control-group" style="margin-top: 10px;float:right;">				
 			    		<div class="controls">
-			    			<h:commandButton value="Salvar" action="#{cadastroFiadorController.editarFiador()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
+			    			<h:commandButton id="salvar" value="Salvar" action="#{cadastroFiadorController.editarFiador()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;">
+			    			</h:commandButton>
 			    			<h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger" style="width: 150px;"/>
 			    		</div>
 			    	</div>

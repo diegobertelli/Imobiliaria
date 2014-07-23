@@ -4,17 +4,18 @@ import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.view.ViewScoped;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
-import dao.FiadorDao;
 import modelo.Fiador;
+import dao.FiadorDao;
 
 @ManagedBean
 @ViewScoped
 public class CadastroFiadorController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
 	private Fiador fiador;
 
 	private FiadorDao fiadorDao;
@@ -23,8 +24,17 @@ public class CadastroFiadorController implements Serializable {
 
 	@PostConstruct
 	public void init() {
-		this.fiador = new Fiador();
 		this.fiadorDao = new FiadorDao();
+		verificaParametro();
+	}
+	
+	private void verificaParametro() {
+		String id = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("fiador");  
+		if(id == null || id.isEmpty()){
+			this.fiador = new Fiador();
+		}else{
+			this.fiador = fiadorDao.find(Long.valueOf(id));
+		}
 	}
 
 	public String novoFiador() {
