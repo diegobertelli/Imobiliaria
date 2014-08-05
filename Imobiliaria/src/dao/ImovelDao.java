@@ -97,4 +97,21 @@ public List<Imovel> consultarImoveis(Imovel imovel){
 		return imovelsRetorno;
 	}
 
+	public Imovel buscarPorNumeroEscritura(String numEscritura) {
+		
+		Imovel imovel = null;
+		try {
+
+			getEntityManager().getTransaction().begin();
+			Query query = getEntityManager().createQuery("select i from Imovel as i where i.numeroEscritura = :numEscritura");
+			query.setParameter("numEscritura", numEscritura);
+			imovel = (Imovel) query.getSingleResult();
+			getEntityManager().getTransaction().commit();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return imovel;
+	}
+
 }

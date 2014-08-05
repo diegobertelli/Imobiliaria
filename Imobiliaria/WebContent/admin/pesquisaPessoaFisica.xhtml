@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="template.xhtml">
+	
+		<ui:define name="corpo">
+		
+			<h1>
+			Sistema Imobiliário <small> Lista Pessoa Física </small>
+			</h1>
+			<ol class="breadcrumb">
+	
+			</ol>
+			
+			<center>
+			<h:form id="pessoaFisica" prependId="false">
+			
+						<div class="row">
+						    <div class="col-lg-4 text-center">
+						            
+						        <label style="margin-top: 10px;float: left;">Buscar por nome:</label>
+								<br />
+								<h:inputText id="nome" type="text" class="form-control" value="#{pesquisaPessoaFisicaController.nome}"/>		            	           
+						    </div>
+						          
+						    <div class="col-lg-4 text-center">
+						         
+						         <br /> 	
+						        <div class="control-group" style="margin-top: 15px;float:left;">				
+						    		<div class="controls">
+						    			<h:commandButton id="buscar" value="Buscar" styleClass="btn btn-primary" style="margin-right: 10px;width: 150px;">
+						    				<f:ajax listener="#{pesquisaPessoaFisicaController.buscarPorNome}" execute="pessoaFisica:nome" render=":pessoaFisica" event="click" />
+						    			</h:commandButton>
+						    		</div>
+						    	</div>			 
+						                       
+							</div>
+							       
+						</div><br /> <br /> 
+			
+			<div class="panel panel-primary" >
+				<div class="panel-heading">
+					<h3 class="panel-title" >Lista de Clientes</h3>
+				</div>
+					<div class="panel-body" >	
+						
+					
+						<h:dataTable id="lista" value="#{pesquisaPessoaFisicaController.pessoasFisicas}" var="pf" styleClass="table table-hover">
+							<h:column>
+								<f:facet name="header">Nome</f:facet>
+								<h:outputText value="#{pf.nome}" />
+			                </h:column>
+		
+			                <h:column>
+								<f:facet name="header"><h:outputText value="Email" /></f:facet>
+								<h:outputText value="#{pf.email}" />
+			                </h:column>
+		
+			                <h:column>
+								<f:facet name="header"><h:outputText value="Telefone" /></f:facet>
+								<h:outputText value="#{pf.telefone}" />
+			                </h:column>
+		
+			                <h:column>
+								<f:facet name="header"><h:outputText value="CPF" /></f:facet>
+								<h:outputText value="#{pf.cpf}">				
+								</h:outputText>
+			                </h:column>
+			                
+			                <h:column>
+								<f:facet name="header"><h:outputText value="RG" /></f:facet>
+								<h:outputText value="#{pf.rg}">
+								</h:outputText>
+			                </h:column>
+			                
+			                <h:column>
+								<f:facet name="header"><h:outputText value="Sexo" /></f:facet>
+								<h:outputText value="#{pf.sexo}">
+								</h:outputText>
+			                </h:column>
+			                
+			                <h:column>
+								<f:facet name="header"><h:outputText value="Data Nascimento" /></f:facet>
+								<h:outputText value="#{pf.dataNascimento}">
+									<f:convertDateTime pattern="dd/MM/yyyy"/>
+								</h:outputText>
+			                </h:column>
+			                
+			                 <h:column>
+								<f:facet name="header"><h:outputText value="Sexo" /></f:facet>
+								<h:outputText value="#{pf.sexo}">
+								</h:outputText>
+			                </h:column>
+			                
+			                 <h:column>
+								<f:facet name="header" >
+									<h:outputText value="Editar"/>
+								</f:facet>
+								<center>
+								<p:button outcome="cadastroPessoaFisica" icon="ui-icon-pencil" title="Editar">
+				    				<f:param name="pessoaFisica" value="#{pf.id}" />
+				    			</p:button>
+								</center>
+							</h:column>
+							<h:column>
+								<f:facet name="header" >
+									<h:outputText value="Remover"/>
+								</f:facet>
+								<center>
+								<p:commandButton id="excluir" icon="ui-icon-trash" oncomplete="confirmacao.show()" process="@this" >
+									<f:setPropertyActionListener target="#{pesquisaPessoaFisicaController.pessoaFisica}" value="#{pf}" />
+								</p:commandButton>
+								</center>
+							</h:column>
+			                
+						</h:dataTable>	
+						
+										
+					
+					</div>
+					
+			</div>
+			
+			</h:form>
+			
+				<h:form id="dialog" prependId="false">
+					
+					<p:confirmDialog header="Exclusão de Pessoa Física" 
+						message="Tem certeza que deseja excluir a Pessoa Física?"
+						widgetVar="confirmacao">
+				
+						<p:commandButton value="Sim" update=":pessoaFisica:lista" oncomplete="confirmacao.hide();}" action="#{pesquisaPessoaFisicaController.excluirPessoaFisica()}" process="@this"/>
+						<p:button value="Não" onclick="confirmacao.hide(); return false;" />
+				
+					</p:confirmDialog>
+				
+				</h:form>
+					
+			</center>
+					
+		</ui:define>
+	
+	</ui:composition>
+</html>

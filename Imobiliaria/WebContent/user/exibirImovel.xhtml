@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="template.xhtml">
+	
+	<ui:define name="corpo">
+	
+		<!-- start subheader -->
+		<div class="subHeader page">
+		    <div class="container">
+		    	<h1>Informações do Imóvel</h1>
+		    	<form class="searchForm" method="post" action="#">
+		            <input type="text" name="search" value="" />
+		        </form>
+		    </div><!-- end subheader container -->
+		</div><!-- end subheader div -->
+		
+		<!-- start main content div -->
+		<div class="properties">
+		    <div class="container">
+		    	
+		        <div class="row">
+		
+		            <!-- start content -->
+		            <div class="col-lg-9 col-md-9">
+		                <div class="gallery">
+		                    <ul class="bxslider2">
+		                      <li><img src="../resources/imagens/images/banner4.jpg" alt="" /></li>
+		                      <li><img src="../resources/imagens/images/banner5.jpg" alt="" /></li>
+		                      <li><img src="../resources/imagens/images/banner3.jpg" alt="" /></li>
+		                      <li><img src="../resources/imagens/images/bathroom.jpg" alt="" /></li>
+		                    </ul>
+		
+		                    <div id="bx-pager">
+		                      <a data-slide-index="0" href="#"><img src="../resources/imagens/images/blog-thumb1.jpg" alt="" /></a>
+		                      <a data-slide-index="1" href="#"><img src="../resources/imagens/images/blog-thumb3.jpg" alt=""/></a>
+		                      <a data-slide-index="2" href="#"><img src="../resources/imagens/images/blog-thumb2.png" alt=""/></a>
+		                      <a data-slide-index="3" href="#"><img src="../resources/imagens/images/blog-thumb4.jpg" alt=""/></a>
+		                    </div>
+		                    <div class="sliderControls">
+		                        <span class="slider-prev"></span>
+		                        <span class="slider-next"></span>
+		                    </div>
+		                </div>
+		                <div class="row">
+		                    <div class="col-lg-4">
+		                        <div class="overview">
+		                        <h4>DESCRIÇÃO</h4>
+		                        <ul class="overviewList">
+		                            <li>Tipo de Propriedade <span>FAMILY HOUSE</span></li>
+		                            <li>Tipo de Contrato <span>FOR SALE</span></li>
+		                            <li>Localização <span>BALTIMORE, MD</span></li>
+		                            <li>Tamanho <span>2,412m</span></li>
+		                            <li>Quartos <span>5</span></li>
+		                            <li>Banheiros <span>3</span></li>
+		                            <li>Garagens <span>1</span></li>
+		                        </ul>
+		                        </div>
+		            
+		            			<div class="propertyItem">
+		            			<center>
+		                        <div class="propertyContent">
+		                            <a href="listarCorretores.xhtml" class="propertyImgLink"><img class="propertyImg" src="../resources/imagens/images/agent-icon-small.png" alt="" /></a>
+		                            <h4><a href="listarCorretores.xhtml">AGENDAR VISITA COM UM CORRETOR</a></h4>
+		                        </div>
+		                        </center>
+		                        <center>		                        
+		                        <div class="agentDetails" style="width: 100%; height: 50px; color: grey;">
+		                            <a href="listarCorretores.xhtml" class="buttonGrey" style="margin-top: 4%; margin-left: 32%;">AGENDAR</a>									
+		                        </div> 
+		                    	</center>
+		                    	</div>
+				
+		                
+		                    </div>
+		                    <div class="col-lg-8">
+		                        <p class="price" style="float:right;">$687,000</p>
+		                        <p class="forSale" style="float:right; margin-right:20px;">FOR SALE</p>
+		                        <h1>587 Smith Avenue</h1>
+		                        <p>Baltimore, MD</p>
+		                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula dapibus 
+		                        mauris, quis ullamcorper enim aliquet sed. Maecenas quis eget tellus dui. Vivamus 
+		                        condimentum egestas.</p>
+		                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod 
+		                        sollicitudin nunc, eget pretium massa. Ut sed adipiscing enim, pellentesque ultrices 
+		                        erat. Integer placerat felis neque, et semper augue ullamcorper in. Pellentesque 
+		                        iaculis leo iaculis aliquet ultrices. Suspendisse potenti. Aenean ac magna faucibus, 
+		                        consectetur ligula vel, feugiat est. Nullam imperdiet semper neque eget euismod. 
+		                        Nunc commodo volutpat semper.</p><br/>
+		                        <h4>GENERAL AMENTITIES</h4>
+		                        <div class="divider thin"></div>
+		                        <table class="amentitiesTable">
+		                            <tr>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Air Conditioning</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-cross.png" alt="" />Coffee Pot</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-cross.png" alt="" />Heating</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Parking</td>
+		                            </tr>
+		                            <tr>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-cross.png" alt="" />Balcony</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Dishwasher</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Internet</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Pool</td>
+		                            </tr>
+		                            <tr>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Bedding</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Fridge</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Microwave</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Terrance</td>
+		                            </tr>
+		                            <tr>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Cable TV</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-cross.png" alt="" />Grill</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-check.png" alt="" />Oven</td>
+		                                <td><img class="icon" src="../resources/imagens/images/icon-cross.png" alt="" />Toaster</td>
+		                            </tr>
+		                        </table><br/>
+		                    </div><!-- end col -->
+		                </div><!-- end row -->
+	
+		            </div><!-- end content -->
+		        
+		            <!-- start sidebar -->	        
+		            
+		            <div class="col-lg-3 col-md-3">
+		            
+		            	 <h3>LOCALIZAÇÃO</h3>
+			            <div class="divider"></div>		            
+			            <div id="map-canvas-one-pin" class="mapSmall"></div>
+		            
+		                <!-- start quick search widget -->
+		                <h3>BUSCA RÁPIDA</h3>
+		                <div class="divider"></div>
+		                <div class="filterContent sidebarWidget">
+		                    <form method="post" action="#">
+		                        <div class="row">
+		                            <div class="col-lg-12 col-md-12 col-sm-6">
+		                                <div class="formBlock">
+		                                <label for="propertyType">Property Type</label><br/>
+		                                <select name="property type" id="propertyType" class="formDropdown">
+		                                    <option value="">Any</option>
+		                                    <option value="Country2">Family Home</option>
+		                                    <option value="Country3">Apartment</option>
+		                                    <option value="Country4">Condo</option>
+		                                    <option value="Country5">Villa</option>
+		                                </select>
+		                                </div>
+		                            </div>
+		                            <div class="col-lg-12 col-md-12 col-sm-6">
+		                                <div class="formBlock">
+		                                <label for="location">Location</label><br/>
+		                                <select name="location" id="location" class="formDropdown">
+		                                    <option value="">Any</option>
+		                                    <option value="Country2">Option 1</option>
+		                                    <option value="Country3">Option 2</option>
+		                                    <option value="Country4">Option 3</option>
+		                                    <option value="Country5">Option 4</option>
+		                                </select>
+		                                </div>
+		                            </div>
+		                            <div class="col-lg-12 col-md-12 col-sm-6">
+		                                <div class="formBlock">
+		                                <label for="price">Price Range</label><br/>
+		                                <select name="price" id="price" class="formDropdown">
+		                                    <option value="">Any</option>
+		                                    <option value="Country2">Option 1</option>
+		                                    <option value="Country3">Option 2</option>
+		                                    <option value="Country4">Option 3</option>
+		                                    <option value="Country5">Option 4</option>
+		                                </select>
+		                                </div>
+		                            </div>
+		                            <div class="col-lg-12 col-md-12 col-sm-6">
+		                                <div class="formBlock">
+		                                    <input class="buttonColor" type="submit" value="FIND PROPERTIES" style="margin-top:24px;"/>
+		                                </div>
+		                            </div>
+		                            <div style="clear:both;"></div>
+		                        </div><!-- end row -->
+		                    </form><!-- end form -->
+		                </div><!-- end quick search widget -->
+				                	
+		                <!-- start property types widget -->
+		                <h3>PROPERTY TYPES</h3>
+		                <div class="divider"></div>
+		                <div class="propertyTypesWidget sidebarWidget">
+		                    <ul>
+		                        <li><h4><a href="#">FAMILY HOUSE</a></h4></li>
+		                        <li><h4><a href="#">SINGLE HOUSE</a></h4></li>
+		                        <li><h4><a href="#">APARTMENT</a></h4></li>
+		                        <li><h4><a href="#">CONDO</a></h4></li>
+		                        <li><h4><a href="#">VILLA</a></h4></li>
+		                        <li><h4><a href="#">OFFICE BUILDING</a></h4></li>
+		                    </ul>
+		                </div>
+		                <!-- end property types widget -->
+		
+		            </div><!-- end col -->
+		        </div><!-- end row -->
+		
+		    </div><!-- end container -->
+		</div>
+		<!-- end main content -->
+				
+	
+	</ui:define>
+	
+	</ui:composition>
+</html>

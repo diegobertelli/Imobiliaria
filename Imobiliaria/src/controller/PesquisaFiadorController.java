@@ -43,6 +43,8 @@ public class PesquisaFiadorController implements Serializable {
 
 	public void excluirFiador() {
 		this.fiadorDao.remove(this.fiador);
+		buscarListaFiadores();
+		this.nome = null;
 	}
 
 	public void removerFiador(ActionEvent e) {

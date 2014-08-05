@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="template.xhtml">
+	
+		<ui:define name="corpo">
+		
+			<h1>
+			Sistema Imobiliário <small> Lista Pessoa Jurídica </small>
+			</h1>
+			<ol class="breadcrumb">
+	
+			</ol>
+			
+			<center>
+			
+			<h:form id="pessoaJuridica" prependId="false">
+			
+						<div class="row">
+						    <div class="col-lg-4 text-center">
+						            
+						        <label style="margin-top: 10px;float: left;">Buscar por nome:</label>
+								<br />
+								<h:inputText id="nome" type="text" class="form-control" value="#{pesquisaPessoaJuridicaController.nome}"/>		            	           
+						    </div>
+						          
+						    <div class="col-lg-4 text-center">
+						         
+						         <br /> 	
+						        <div class="control-group" style="margin-top: 15px;float:left;">				
+						    		<div class="controls">
+						    			<h:commandButton id="buscar" value="Buscar" styleClass="btn btn-primary" style="margin-right: 10px;width: 150px;">
+						    				<f:ajax listener="#{pesquisaPessoaJuridicaController.buscarPorNome}" execute="pessoaJuridica:nome" render=":pessoaJuridica" event="click" />
+						    			</h:commandButton>
+						    		</div>
+						    	</div>			 
+						                       
+							</div>
+							       
+						</div><br /> <br /> 
+			
+			<div class="panel panel-primary" >
+				<div class="panel-heading">
+					<h3 class="panel-title" >Lista de Clientes</h3>
+				</div>
+					<div class="panel-body" >				
+			
+						<h:dataTable id="lista" value="#{pesquisaPessoaJuridicaController.pessoasJuridicas}" var="pj" styleClass="table table-hover">
+							<h:column>
+								<f:facet name="header">Nome</f:facet>
+								<h:outputText value="#{pj.nome}" />
+			                </h:column>
+		
+			                <h:column>
+								<f:facet name="header"><h:outputText value="Email" /></f:facet>
+								<h:outputText value="#{pj.email}" />
+			                </h:column>
+		
+			                <h:column>
+								<f:facet name="header"><h:outputText value="Telefone" /></f:facet>
+								<h:outputText value="#{pj.telefone}" />
+			                </h:column>
+		
+			                <h:column>
+								<f:facet name="header"><h:outputText value="Razão Social" /></f:facet>
+								<h:outputText value="#{pj.razaoSocial}"/>
+			                </h:column>
+			                
+			                <h:column>
+								<f:facet name="header"><h:outputText value="CNPJ" /></f:facet>
+								<h:outputText value="#{pj.cnpj}"/>
+			                </h:column>
+			                
+			                <h:column>
+								<f:facet name="header"><h:outputText value="Inscrição Estadual" /></f:facet>
+								<h:outputText value="#{pj.ie}"/>
+			                </h:column>
+			                
+			                <h:column>
+								<f:facet name="header" >
+									<h:outputText value="Editar"/>
+								</f:facet>
+								<center>
+								<p:button outcome="cadastroPessoaJuridica" icon="ui-icon-pencil" title="Editar">
+				    				<f:param name="pessoaJuridica" value="#{pj.id}" />
+				    			</p:button>
+								</center>
+							</h:column>
+							<h:column>
+								<f:facet name="header" >
+									<h:outputText value="Remover"/>
+								</f:facet>
+								<center>
+								<p:commandButton id="excluir" icon="ui-icon-trash" oncomplete="confirmacao.show()" process="@this" >
+									<f:setPropertyActionListener target="#{pesquisaPessoaJuridicaController.pessoaJuridica}" value="#{pf}" />
+								</p:commandButton>
+								</center>
+							</h:column>
+			           
+			                
+						</h:dataTable>
+					
+					</div>
+					
+			</div>
+			
+			</h:form>
+			
+				<h:form id="dialog" prependId="false">
+					
+					<p:confirmDialog header="Exclusão de Pessoa Jurídica" 
+						message="Tem certeza que deseja excluir a Pessoa Jurídica?"
+						widgetVar="confirmacao">
+				
+						<p:commandButton value="Sim" update=":pessoaJuridica:lista" oncomplete="confirmacao.hide();}" action="#{pesquisaPessoaJuridicaController.excluirPessoaJuridica()}" process="@this"/>
+						<p:button value="Não" onclick="confirmacao.hide(); return false;" />
+				
+					</p:confirmDialog>
+				
+				</h:form>
+			
+			</center>
+			
+		</ui:define>
+	
+	</ui:composition>
+</html>

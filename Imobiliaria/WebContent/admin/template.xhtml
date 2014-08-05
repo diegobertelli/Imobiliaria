@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+      
+  <h:head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <meta name="description" content=""></meta>
+    <meta name="author" content=""></meta>
+
+    <title>Atlas - Gerenca Imobiliária</title>
+
+ 	<!-- Page Specific CSS -->
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css"> </link>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="../resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Add custom CSS here -->
+    <link href="../resources/css/sb-admin.css" rel="stylesheet" type="text/css"/>
+    <link href="../resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    
+    <!-- JQuery UI -->
+    <link href="../resources/js/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    
+  </h:head>
+
+  <h:body>
+
+    <!-- Div que pega todo conteudo -->
+	
+	<div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <a class="navbar-brand" href="index.html" style="padding-left:50px;"><h:graphicImage library="imagens" name="Atlascdr.png" width="100" height="30" /></a>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+		<!-- Menu Lateral -->
+		
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="active"><a href="principal.xhtml"><i class="fa fa-desktop"></i> Home </a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Cliente <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="cadastroPessoaFisica.xhtml">Nova Física</a></li>
+                <li><a href="cadastroPessoaJuridica.xhtml">Nova Jurídica</a></li>
+                <li><a href="pesquisaPessoaFisica.xhtml">Listar Física</a></li>
+                <li><a href="pesquisaPessoaJuridica.xhtml">Listar Jurídica</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Fiador <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="cadastroFiador.xhtml">Novo</a></li>
+                <li><a href="pesquisaFiador.xhtml">Listar</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Imóvel <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="cadastroImovel.xhtml">Novo</a></li>
+                <li><a href="pesquisaImovel.xhtml">Listar</a></li>
+              </ul>
+            </li>
+			<li><a href="cadastroVenda.xhtml"><i class="fa fa-edit"></i> Venda </a></li>
+			<li class="divider"></li>
+			<li><a href="blank-page.html"><i class="fa fa-edit"></i> Locação </a></li>
+			<li class="divider"></li>
+			<li><a href="contato.xhtml"><i class="fa fa-envelope"></i> Contato </a></li>
+          </ul>      
+          <ul class="nav navbar-nav navbar-right navbar-user">            
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Usuário <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="novoFuncionario.xhtml"><i class="fa fa-user"></i> Editar </a></li>
+                <li class="divider"></li>
+                <li><a href="login.xhtml"><i class="fa fa-power-off"></i> Sair </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+	  
+	  
+
+	  
+	  <!-- /.Corpo da Página -->
+	  
+	    <div id="page-wrapper">
+			
+			<ui:insert name="corpo" />
+			
+	    </div>
+	    
+	   <!-- /.FIM Corpo da Página -->   
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <h:outputScript library="js" name="jquery-1.10.2.js" />
+    <h:outputScript library="js" name="bootstrap.js" />
+    <h:outputScript library="js" name="jquery.maskedinput.js" />
+    <h:outputScript library="js" name="mascaras.js" />
+
+    <!-- Page Specific Plugins -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <h:outputScript library="js/morris" name="chart-data-morris.js" />
+    <h:outputScript library="js/tablesorter" name="jquery.tablesorter.js" />
+    <h:outputScript library="js/tablesorter" name="tables.js" />
+    
+	<!-- JQuery UI -->
+	<h:outputScript library="js/jquery-ui" name="jquery-ui.js" />
+
+	<!-- JQuery Mask Money -->
+	<h:outputScript library="js" name="jquery.maskMoney.js" />
+
+  </h:body>
+	
+</html>

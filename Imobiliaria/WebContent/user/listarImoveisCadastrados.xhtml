@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="template.xhtml">
+	
+		<ui:define name="corpo">
+		
+			<!-- start subheader -->
+			<div class="subHeader page">
+			    <div class="container">
+			        <h1>My Properties</h1>
+			        <form class="searchForm" method="post" action="#">
+			            <input type="text" name="search" value="Search our site" />
+			        </form>
+			    </div><!-- end subheader container -->
+			</div><!-- end subheader div -->
+			
+			<!-- start my properties list -->
+			<div class="genericSection">
+			    <div class="container">
+			        <a style="float:right; margin-top:-7px;" href="submit_property.html" class="buttonGrey">+ Submit New Property</a>
+			        <h3>MY PROPERTIES</h3>
+			        <div class="divider"></div>
+			        <table class="myProperties">
+			            <tr class="myPropertiesHeader">
+			                <td class="myPropertyImg">Image</td>
+			                <td class="myPropertyAddress">Address</td>
+			                <td class="myPropertyType">Type</td>
+			                <td class="myPropertyStatus">Status</td>
+			                <td class="myPropertyDate">Date Created</td>
+			                <td class="myPropertyActions">Actions</td>
+			            </tr>
+			            <tr>
+			                <td class="myPropertyImg"><a href="property_single.html"><img class="smallThumb" src="../resources/imagens/images/blog-thumb1.jpg" alt="" /></a></td>
+			                <td class="myPropertyAddress"><a href="property_single.html"><h4>587 Smith Avenue</h4></a></td>
+			                <td class="myPropertyType">Family House</td>
+			                <td class="myPropertyStatus">For Sale</td>
+			                <td class="myPropertyDate">March 20, 2014</td>
+			                <td class="myPropertyActions">
+			                    <span><a href="edit_property.html"><img class="icon" src="../resources/imagens/images/icon-pencil.png" alt="" />EDIT</a></span>
+			                    <span><a href="#"><img class="icon" src="../resources/imagens/images/icon-cross.png" alt="" />REMOVE</a></span>
+			                    <span><a href="property_single.html"><img class="icon" src="../resources/imagens/images/icon-view.png" alt="" />VIEW</a></span>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td class="myPropertyImg"><a href="property_single.html"><img class="smallThumb" src="../resources/imagens/images/blog-thumb2.png" alt="" /></a></td>
+			                <td class="myPropertyAddress"><a href="property_single.html"><h4>587 Smith Avenue</h4></a></td>
+			                <td class="myPropertyType">Family House</td>
+			                <td class="myPropertyStatus">Sold</td>
+			                <td class="myPropertyDate">March 20, 2014</td>
+			                <td class="myPropertyActions">
+			                    <span><a href="edit_property.html"><img class="icon" src="../resources/imagens/images/icon-pencil.png" alt="" />EDIT</a></span>
+			                    <span><a href="#"><img class="icon" src="../resources/imagens/images/icon-cross.png" alt="" />REMOVE</a></span>
+			                    <span><a href="property_single.html"><img class="icon" src="../resources/imagens/images/icon-view.png" alt="" />VIEW</a></span>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td class="myPropertyImg"><a href="property_single.html"><img class="smallThumb" src="../resources/imagens/images/blog-thumb3.jpg" alt="" /></a></td>
+			                <td class="myPropertyAddress"><a href="property_single.html"><h4>587 Smith Avenue</h4></a></td>
+			                <td class="myPropertyType">Apartment</td>
+			                <td class="myPropertyStatus">For Rent</td>
+			                <td class="myPropertyDate">March 20, 2014</td>
+			                <td class="myPropertyActions">
+			                    <span><a href="edit_property.html"><img class="icon" src="../resources/imagens/images/icon-pencil.png" alt="" />EDIT</a></span>
+			                    <span><a href="#"><img class="icon" src="../resources/imagens/images/icon-cross.png" alt="" />REMOVE</a></span>
+			                    <span><a href="property_single.html"><img class="icon" src="../resources/imagens/images/icon-view.png" alt="" />VIEW</a></span>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td class="myPropertyImg"><a href="property_single.html"><img class="smallThumb" src="../resources/imagens/images/blog-thumb4.jpg" alt="" /></a></td>
+			                <td class="myPropertyAddress"><a href="property_single.html"><h4>587 Smith Avenue</h4></a></td>
+			                <td class="myPropertyType">Condo</td>
+			                <td class="myPropertyStatus">For Sale</td>
+			                <td class="myPropertyDate">March 20, 2014</td>
+			                <td class="myPropertyActions">
+			                    <span><a href="edit_property.html"><img class="icon" src="../resources/imagens/images/icon-pencil.png" alt="" />EDIT</a></span>
+			                    <span><a href="#"><img class="icon" src="../resources/imagens/images/icon-cross.png" alt="" />REMOVE</a></span>
+			                    <span><a href="property_single.html"><img class="icon" src="../resources/imagens/images/icon-view.png" alt="" />VIEW</a></span>
+			                </td>
+			            </tr>
+			        </table>
+			        <ul class="pageList">
+			            <li><a href="#">&lt;</a></li>
+			            <li><a href="#" class="current">1</a></li>
+			            <li><a href="#">2</a></li>
+			            <li><a href="#">3</a></li>
+			            <li><a href="#">&gt;</a></li>
+			        </ul>
+			    </div><!-- end container -->
+			</div>
+			<!-- end my properties list -->
+		
+		</ui:define>
+	
+	</ui:composition>
+</html>

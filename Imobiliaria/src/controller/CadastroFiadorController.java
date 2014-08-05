@@ -42,7 +42,7 @@ public class CadastroFiadorController implements Serializable {
 		return "cadastroFiador";
 	}
 
-	public String editarFiador() {
+	public String salvarFiador() {
 		this.fiadorDao.edit(this.fiador);
 		this.fiador = new Fiador();
 		return "cadastroFiador";

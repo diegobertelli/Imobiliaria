@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="template.xhtml">
+	
+
+		<ui:define name="corpo">
+	
+		<h1>
+			Sistema Imobiliário <small> Nova Venda </small>
+		</h1>
+		<ol class="breadcrumb">
+
+		</ol>
+		
+		<center>
+
+		<div class="panel panel-primary" >
+			<div class="panel-heading">
+				<h3 class="panel-title" >Cadastro de Venda</h3>
+			</div>
+			<div class="panel-body" >
+
+				<h:form id="venda" prependId="false">
+					<h:inputHidden value="#{cadastroVendaController.venda.id}"/>
+					
+					<div class="row">					
+								          	
+			          	<div class="col-lg-4 text-center">
+						<label style="margin-top: 10px;float: left;margin-right: 10px;">CPF / CNPJ do Cliente:</label>
+						<br />
+						<h:inputText id="buscacpf" type="text" class="form-control" value="#{cadastroVendaController.valor}" >
+							<f:ajax listener="#{cadastroVendaController.buscarPorValor}" execute="venda:buscacpf" render=":venda:nome" event="change" />
+						</h:inputText>
+			          	</div>  
+			          	
+			          	<div class="col-lg-4 text-center">
+						<label style="margin-top: 10px;float: left;margin-right: 10px;">Nome do Cliente:</label>
+						<br />
+						<h:inputText id="nome" type="text" class="form-control" value="#{cadastroVendaController.venda.cliente.nome}" disabled="true" />
+			          	</div> 
+			          		          		         				          		        			      		        
+			        </div>
+			        
+			        <div class="row">					
+								          	
+			          	<div class="col-lg-4 text-center">
+						<label style="margin-top: 10px;float: left;margin-right: 10px;">Número da Escritura do Imóvel:</label>
+						<br />
+						<h:inputText id="buscaNumEsc" type="text" class="form-control" value="#{cadastroVendaController.valor}" >
+							<f:ajax listener="#{cadastroVendaController.buscarPorNumEsc}" execute="venda:buscaNumEsc" render=":venda:endereco" event="change" />
+						</h:inputText>
+			          	</div>  
+			          	
+			          	<div class="col-lg-4 text-center">
+						<label style="margin-top: 10px;float: left;margin-right: 10px;">Endereço:</label>
+						<br />
+						<h:inputText id="endereco" type="text" class="form-control" value="#{cadastroVendaController.venda.imovel.endereco}" disabled="true" />
+			          	</div> 
+			          		          		         				          		        			      		        
+			        </div>
+			        
+			        <div class="row">
+
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Data do Negocio:</label>
+							<br />
+							<h:inputText id="data" type="date" class="form-control"  value="#{cadastroVendaController.venda.dataVenda}" >
+								<f:convertDateTime type="date" pattern="dd/mm/yyyy" />
+			                </h:inputText>
+			          </div>
+			           <div class="col-lg-4 text-center">
+			            
+			            	<label style="float: left; margin-top: 10px;">Valor:</label>
+							<br />
+							<h:inputText id="renda" type="text" class="form-control" value="#{cadastroVendaController.venda.valor}" converter="MoedaConverter"/>
+			                       
+			          </div>
+			          <div class="col-lg-4 text-center">
+			            
+			            	<label style="margin-top: 10px; float: left;">Forma de Pagamento:</label>
+							<h:selectOneMenu class="form-control"  value="#{cadastroVendaController}">
+								<f:selectItem itemValue="" itemLabel="" />
+								<f:selectItem itemValue="vista" itemLabel="À vista" />
+								<f:selectItem itemValue="prazo" itemLabel="À prazo" />
+							</h:selectOneMenu><br/>
+			            	           
+			          </div>
+			         </div>
+					
+					<div class="row">
+			          <div class="col-lg-2 text-center">
+			            
+			            	<label style="margin-top: 10px;float: left;">Parcelas:</label>
+							<br />
+							<h:inputText id="parcelas" type="text" class="form-control"  style="height:25px" value="#{cadastroVendaController.venda.parcelas}" />
+			            	           
+			          </div>
+			          <div class="col-lg-4 text-center">
+			          
+			          		<label style="margin-top: 10px;float: left;margin-right: 10px;">Financeira:</label>
+			          		<h:selectOneMenu id="financeira" class="form-control"  value="#{cadastroVendaController.venda.financeira}">
+			          		   <f:selectItem itemLabel=""/>
+							   <f:selectItems value="#{cadastroVendaController.financeiras}" />   							
+							</h:selectOneMenu>          
+			            	           
+			          </div>
+			          
+			        </div>
+			        
+			        
+			        <div>
+						<h:messages style="float:right;color:red;"/>
+					</div>
+					<hr size="10" />
+				
+					<div class="control-group" style="margin-top: 10px;float:right;">				
+			    		<div class="controls">
+			    			<h:commandButton id="salvar" value="Salvar" action="#{cadastroVendaController.salvarVenda()}" styleClass="btn btn-success" style="margin-right: 10px;width: 150px;"/>
+			    			<h:commandButton id="limpar" value="Limpar" type="reset" styleClass="btn btn-danger" style="width: 150px;"/>
+			    		</div>
+			    	</div>
+			        
+					
+				</h:form>
+
+			</div>
+		</div>
+		
+		</center>
+		
+		</ui:define>
+	
+	</ui:composition>
+</html>

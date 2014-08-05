@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Easy Living - Responsive Real Estate Template"/>
+	<meta name="keywords" content="Themes, real estate, responsive, themeforest, Templates"/>
+	<meta name="author" content="Rype Pixel [Chris Gipple]"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<title>Easy Living | Real Estate Template</title>
+	
+	<!-- html5 support in IE8 and later -->
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	
+	<!-- CSS file links -->
+	<link href="../resources/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+	<link href="../resources/css/jquery.bxslider.css" rel="stylesheet" media="screen"/>
+	<link href="../resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../resources/css/responsive.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../resources/css/yamm.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../resources/css/jquery.nouislider.min.css" rel="stylesheet" type="text/css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'/>
+
+</h:head>
+
+<h:body>
+
+<!-- INÍCIO DO TOPO -->
+
+<!-- Start Header -->
+<header class="navbar yamm navbar-default navbar-fixed-top">
+<div class="topBar">
+    <div class="container">
+        <p class="topBarText"><img class="icon" src="../resources/imagens/images/icon-phone.png" alt="" />1-800-192-0978</p>
+        <p class="topBarText"><img class="icon" src="../resources/imagens/images/icon-mail.png" alt="" />info@easyLivingTheme.com</p>
+        <ul class="socialIcons">
+            <li><a href="#"><img src="../resources/imagens/images/icon-fb.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-twitter.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-google.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-rss.png" alt="" /></a></li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+   	<div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../resources/imagens/images/logoGreen.png" alt="Easy Living" />EASY <span>LIVING</span></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="index.html" class="dropdown-toggle current" data-toggle="dropdown">HOME</a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.xhtml" class="current-sub">Home</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="portfolio_style1.html" class="dropdown-toggle" data-toggle="dropdown">IMÓVEIS</a>
+                <ul class="dropdown-menu">
+                    <li><a href="listarImoveis.xhtml">Listar Imóveis </a></li>
+                    <li><a href="exibirImovel.xhtml">Exibir Imóvel</a></li>                   
+                    <li><a href="cadastrarImovel.xhtml">Cadastrar Imóvel</a></li>
+                    <li><a href="listarImoveisCadastrados.xhtml">Meus Imóveis</a></li>
+                    <li><a href="editarImovel.xhtml">Editar Imóvel</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="blog_classic.html" class="dropdown-toggle" data-toggle="dropdown">CORRETORES</a>
+                <ul class="dropdown-menu">
+                    <li><a href="listarCorretores.xhtml">Listar Corretores</a></li>
+                    <li><a href="exibirCorretor.xhtml">Exibir Corretor</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="contact.html" class="dropdown-toggle" data-toggle="dropdown">CONTATO</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contato.xhtml">Contato</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+            <ul class="nav navbar-nav userButtons">
+                <li><div class="verticalDivider"></div></li>
+                <li><a href="login.xhtml" class="dropdown-toggle buttonGrey">LOGIN</a></li>
+                <li><a style="margin-right:0px;" href="registrarUsuario.xhtml" class="dropdown-toggle buttonGrey">REGISTER</a></li>
+            </ul>
+            </li>
+        </ul>        
+    </div><!--/.navbar-collapse -->
+</div><!-- end header container -->
+</header><!-- End Header -->
+
+<!-- FIM DO TOPO -->
+
+<!-- INÍCIO DO CORPO DA PÁGINA -->
+	  
+	<div id="page-wrapper">
+			
+		<ui:insert name="corpo" />
+			
+	</div>
+	    
+<!-- FIM DO CORPO DA PÁGINA -->
+
+<!-- INÍCIO DO RODAPÉ -->
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <h4><a class="footerLogo" href="#"><img src="../resources/imagens/images/logoGreen.png" alt="Easy Living" />EASY <span>LIVING</span></a></h4>
+                <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Sed ut 
+                purus eget nunc ut dignissim cursus at a nisl. Mauris vitae 
+                turpis quis eros egestas tempor sit amet a arcu. Duis egestas 
+                hendrerit diam.</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <h4>CONTACT</h4>
+                <ul class="contactList">
+                    <li><img class="icon" src="../resources/imagens/images/icon-pin.png" alt="" /> 123 Smith Drive, Arnold, Maryland</li>
+                    <li><img class="icon" src="../resources/imagens/images/icon-phone.png" alt="" /> +1 234 567 8901</li>
+                    <li><img class="icon" src="../resources/imagens/images/icon-mail.png" alt="" /> hello@thriveTheme.com</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <h4>TWITTER</h4>
+                <ul>
+                    <li><a href="#">@JohnDoe</a> Lorem ipsum dolor amet, 
+                    adipiscing elit. Maecenas eget tellus.<br/><span>5 MINUTES AGO</span></li>
+                    <li><a href="#">@JohnDoe</a> Lorem ipsum dolor amet, 
+                    adipiscing elit. Maecenas eget tellus.<br/><span>5 MINUTES AGO</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <h4>NEWSLETTER</h4>
+                <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Sed ut 
+                purus eget nunc ut dignissim cursus at a nisl.</p>
+                <form id="enviarEmail" class="subscribeForm" method="post" action="#">
+                    <input type="text" name="email" value="Your email" class="input footer" />
+                    <input type="submit" name="submit" value="SEND" class="buttonColor" />
+                </form>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end footer container -->
+</footer>
+
+<div class="bottomBar">
+    <div class="container">
+        <p>EASY LIVING REAL ESTATE THEME COPYRIGHT 2013</p>
+        <ul class="socialIcons">
+            <li><a href="#"><img src="../resources/imagens/images/icon-fb.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-twitter.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-google.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-rss.png" alt="" /></a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- FIM DO RODAPÉ -->
+
+<!-- LINKS JavaScript -->
+
+<h:outputScript library="js" name="jquery-1.10.2.js" />		<!-- Jquery -->
+<h:outputScript library="js" name="bootstrap.min.js" />	  <!-- bootstrap 3.0 -->
+<h:outputScript library="js" name="respond.js" />
+<h:outputScript library="js" name="jquery.bxslider.min.js" />          <!-- bxslider -->
+<h:outputScript library="js" name="tabs.js" />      <!-- tabs -->
+<h:outputScript library="js" name="jquery.nouislider.min.js" />  <!-- price slider -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqb3fT3SbMSDMggMEK7fJOIkvamccLrjA&amp;sensor=false"></script><!-- google maps -->
+<h:outputScript library="js" name="map-one-pin.js" /> <!-- map script -->
+<script>
+//call bxslider for sub header section
+$(document).ready(function(){
+    $('.bxslider').bxSlider({
+        auto: true,
+        pager: false,
+        nextSelector: '.slider-next',
+        prevSelector: '.slider-prev',
+        nextText: '<img src="../resources/imagens/images/slider-next.png" alt="slider next" />',
+        prevText: '<img src="../resources/imagens/images/slider-prev.png" alt="slider prev" />'
+    });
+});
+</script>
+
+<script>
+    $('.bxslider2').bxSlider({
+      pagerCustom: '#bx-pager',
+      nextSelector: '.slider-next',
+      prevSelector: '.slider-prev',
+      nextText: '<img src="../resources/imagens/images/slider-next2.png" alt="Next" />',
+      prevText: '<img src="../resources/imagens/images/slider-prev2.png" alt="Previous" />'
+    });
+</script>
+
+<script>
+//Setup price slider 
+var Link = $.noUiSlider.Link;
+
+$(".priceSlider").noUiSlider({
+     range: {
+      'min': 0,
+      'max': 800000
+    }
+    ,start: [150000, 550000]
+    ,step: 1000
+    ,margin: 100000
+    ,connect: true
+    ,direction: 'ltr'
+    ,orientation: 'horizontal'
+    ,behaviour: 'tap-drag'
+    ,serialization: {
+        lower: [
+            new Link({
+                target: $("#price-min")
+            })
+        ],
+
+        upper: [
+            new Link({
+                target: $("#price-max")
+            })
+        ],
+
+        format: {
+        // Set formatting
+            decimals: 0,
+            thousand: ',',
+            prefix: '$'
+        }
+    }
+});
+</script>
+
+</h:body>
+
+</html>

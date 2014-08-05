@@ -1,6 +1,6 @@
 $a = jQuery.noConflict();
 $a(document).ready(function() {
-	$a("#telefone").mask("(99) 999-9999");
+	$a("#telefone").mask("(99) 9999-9999");
 	$a("#cpf").mask("999-999-999.99");
 	$a("#cep").mask("99999-999");
 	$a("#cnpj").mask("99.999.999/9999-99");  
@@ -9,16 +9,17 @@ $a(document).ready(function() {
 	$a('#sala').spinner({min: 0,max: 10,start: 0});
 	$a('#banheiro').spinner({min: 0,max: 10,start: 0});
 	$a('#garagem').spinner({min: 0,max: 10,start: 0});
+	$a('#parcelas').spinner({min: 0,max: 100,start: 0});
 });
 
 $b = jQuery.noConflict();
 $b(document).ready(function() {
 	$b("#data").datepicker({
 		dateFormat: 'dd/mm/yy',
-		dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
+		dayNames: ['Domingo','Segunda','Terï¿½a','Quarta','Quinta','Sexta','Sï¿½bado','Domingo'],
 		dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
-		dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
-		monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro', 'Novembro','Dezembro'],
+		dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sï¿½b','Dom'],
+		monthNames: ['Janeiro','Fevereiro','Marï¿½o','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro', 'Novembro','Dezembro'],
 		monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
 	});        
 });

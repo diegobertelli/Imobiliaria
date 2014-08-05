@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<!-- CSS file links -->
+	<link href="../resources/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+	<link href="../resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../resources/css/responsive.css" rel="stylesheet" type="text/css" media="all" />
+
+</h:head>
+	
+<h:body>
+
+<!-- INÍCIO DO TOPO -->
+
+<!-- Start Header -->
+<div class="navbar yamm navbar-default navbar-fixed-top">
+<div class="topBar">
+    <div class="container">
+        <p class="topBarText"><img class="icon" src="../resources/imagens/images/icon-phone.png" alt="" />1-800-192-0978</p>
+        <p class="topBarText"><img class="icon" src="../resources/imagens/images/icon-mail.png" alt="" />info@easyLivingTheme.com</p>
+        <ul class="socialIcons">
+            <li><a href="#"><img src="../resources/imagens/images/icon-fb.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-twitter.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-google.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-rss.png" alt="" /></a></li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+   	<div class="navbar-div">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../resources/imagens/images/logoGreen.png" alt="Easy Living" />EASY <span>LIVING</span></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="index.html" class="dropdown-toggle current" data-toggle="dropdown">HOME</a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.xhtml" class="current-sub">Home</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="portfolio_style1.html" class="dropdown-toggle" data-toggle="dropdown">IMÓVEIS</a>
+                <ul class="dropdown-menu">
+                    <li><a href="listarImoveis.xhtml">Listar Imóveis </a></li>
+                    <li><a href="exibirImovel.xhtml">Exibir Imóvel</a></li>                   
+                    <li><a href="cadastrarImovel.xhtml">Cadastrar Imóvel</a></li>
+                    <li><a href="listarImoveisCadastrados.xhtml">Meus Imóveis</a></li>
+                    <li><a href="editarImovel.xhtml">Editar Imóvel</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="blog_classic.html" class="dropdown-toggle" data-toggle="dropdown">CORRETORES</a>
+                <ul class="dropdown-menu">
+                    <li><a href="listarCorretores.xhtml">Listar Corretores</a></li>
+                    <li><a href="exibirCorretor.xhtml">Exibir Corretor</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="contact.html" class="dropdown-toggle" data-toggle="dropdown">CONTATO</a>
+                <ul class="dropdown-menu">
+                    <li><a href="contato.xhtml">Contato</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+            <ul class="nav navbar-nav userButtons">
+                <li><div class="verticalDivider"></div></li>
+                <li><a href="login.xhtml" class="dropdown-toggle buttonGrey">LOGIN</a></li>
+                <li><a style="margin-right:0px;" href="registrarUsuario.xhtml" class="dropdown-toggle buttonGrey">REGISTER</a></li>
+            </ul>
+            </li>
+        </ul>        
+    </div><!--/.navbar-collapse -->
+</div><!-- end div container -->
+</div><!-- End Header -->
+
+<!-- FIM DO TOPO -->
+
+	<center>
+	<div style="margin-top: 150px; margin-bottom: 100px;">
+	<h:form>
+	    <p:growl id="messages" showDetail="true" />
+
+	    <h:panelGrid columnClasses="value">
+	        <h3 style="margin-top: 0">Agendar com corretor:</h3>
+	        <p:schedule id="schedule" value="#{scheduleView.eventModel}" widgetVar="myschedule">
+	       
+	       		<p:ajax event="dateSelect" listener="#{scheduleView.onDateSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
+            	<p:ajax event="eventSelect" listener="#{scheduleView.onEventSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
+            	<p:ajax event="eventMove" listener="#{scheduleView.onEventMove}" update="messages" />
+            	<p:ajax event="eventResize" listener="#{scheduleView.onEventResize}" update="messages" />
+	       
+	        </p:schedule>
+	    </h:panelGrid>
+	    
+	    <p:dialog widgetVar="eventDialog" header="Event Details" showEffect="clip" hideEffect="clip">
+	        <h:panelGrid id="eventDetails" columns="2">
+	            <h:outputLabel for="title" value="Title:" />
+	            <p:inputText id="title" value="#{scheduleView.event.title}" required="true" />
+	 
+	            <h:outputLabel for="from" value="From:" />
+	            <p:inputMask id="from" value="#{scheduleView.event.startDate}" mask="99/99/9999">
+	                <f:convertDateTime pattern="dd/MM/yyyy" />
+	            </p:inputMask>
+	 
+	            <h:outputLabel for="to" value="To:" />
+	            <p:inputMask id="to" value="#{scheduleView.event.endDate}" mask="99/99/9999">
+	                <f:convertDateTime pattern="dd/MM/yyyy" />
+	            </p:inputMask>
+	 
+	            <h:outputLabel for="allDay" value="All Day:" />
+	            <h:selectBooleanCheckbox id="allDay" value="#{scheduleView.event.allDay}" />
+	 
+	            <p:commandButton type="reset" value="Reset" />
+	            <p:commandButton id="addButton" value="Save" actionListener="#{scheduleView.addEvent}" oncomplete="PF('myschedule').update();PF('eventDialog').hide();" />
+	        </h:panelGrid>
+	    </p:dialog>
+	    	   
+	</h:form>
+	</div>
+	</center>
+	
+<!-- INÍCIO DO RODAPÉ -->
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <h4><a class="footerLogo" href="#"><img src="../resources/imagens/images/logoGreen.png" alt="Easy Living" />EASY <span>LIVING</span></a></h4>
+                <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Sed ut 
+                purus eget nunc ut dignissim cursus at a nisl. Mauris vitae 
+                turpis quis eros egestas tempor sit amet a arcu. Duis egestas 
+                hendrerit diam.</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <h4>CONTACT</h4>
+                <ul class="contactList">
+                    <li><img class="icon" src="../resources/imagens/images/icon-pin.png" alt="" /> 123 Smith Drive, Arnold, Maryland</li>
+                    <li><img class="icon" src="../resources/imagens/images/icon-phone.png" alt="" /> +1 234 567 8901</li>
+                    <li><img class="icon" src="../resources/imagens/images/icon-mail.png" alt="" /> hello@thriveTheme.com</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <h4>TWITTER</h4>
+                <ul>
+                    <li><a href="#">@JohnDoe</a> Lorem ipsum dolor amet, 
+                    adipiscing elit. Maecenas eget tellus.<br/><span>5 MINUTES AGO</span></li>
+                    <li><a href="#">@JohnDoe</a> Lorem ipsum dolor amet, 
+                    adipiscing elit. Maecenas eget tellus.<br/><span>5 MINUTES AGO</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <h4>NEWSLETTER</h4>
+                <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Sed ut 
+                purus eget nunc ut dignissim cursus at a nisl.</p>
+                <form id="enviarEmail" class="subscribeForm" method="post" action="#">
+                    <input type="text" name="email" value="Your email" class="input footer" />
+                    <input type="submit" name="submit" value="SEND" class="buttonColor" />
+                </form>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end footer container -->
+</footer>
+
+<div class="bottomBar">
+    <div class="container">
+        <p>EASY LIVING REAL ESTATE THEME COPYRIGHT 2013</p>
+        <ul class="socialIcons">
+            <li><a href="#"><img src="../resources/imagens/images/icon-fb.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-twitter.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-google.png" alt="" /></a></li>
+            <li><a href="#"><img src="../resources/imagens/images/icon-rss.png" alt="" /></a></li>
+        </ul>
+    </div>
+</div>
+
+<h:outputScript library="js" name="bootstrap.min.js" />	  <!-- bootstrap 3.0 -->
+<h:outputScript library="js" name="respond.js" />
+
+<!-- FIM DO RODAPÉ -->
+	 
+	<style type="text/css">
+	    .value {
+	        width: 1000px;
+	    }
+	</style>
+	
+	
+</h:body>
+
+</html>

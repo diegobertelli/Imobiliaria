@@ -1,8 +1,11 @@
 package dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import modelo.PessoaJuridica;
 import modelo.PessoaJuridica;
 
 public class PessoaJuridicaDao extends DaoGenerico<PessoaJuridica> {
@@ -32,6 +35,26 @@ public class PessoaJuridicaDao extends DaoGenerico<PessoaJuridica> {
 			e.printStackTrace();
 		}
 		return pessoaJuridica;
+	}
+
+	public List<PessoaJuridica> buscarPorNome(String nome) throws Exception {
+		String hql = "select pj from PessoaJuridica pj where pj.nome like :nome";
+
+		Query q = this.getEntityManager().createQuery(hql);
+
+		q.setParameter("nome", nome + '%');
+
+		try {
+
+			List<PessoaJuridica> pessoasJuridicas = q.getResultList();
+
+			return pessoasJuridicas;
+
+		} catch (Exception e) {
+
+			throw new Exception(e);
+
+		}
 	}
 
 }

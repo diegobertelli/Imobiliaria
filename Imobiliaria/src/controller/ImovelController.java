@@ -11,7 +11,6 @@ import javax.faces.model.SelectItem;
 
 import modelo.Imovel;
 import dao.ImovelDao;
-import dao.PessoaDao;
 import enums.tipoImovelEnum;
 import enums.ufEnum;
 
@@ -78,7 +77,7 @@ public class ImovelController {
 		List<Imovel> it = getListaImovels();
 		for (int i = 0; i < it.size(); i++) {
 			Imovel imovel = it.get(i);
-			list.add(new SelectItem(imovel, imovel.getId().toString()));
+			list.add(new SelectItem(imovel, imovel.getNumeroEscritura()));
 		}
 		return list;
 	}
